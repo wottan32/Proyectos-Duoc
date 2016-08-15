@@ -1,0 +1,13 @@
+create table funcionario(rut varchar2(15)primary key, nombre varchar2(50), direccion varchar2(50), sueldo integer, tipo varchar2(20), especialidad varchar2(20), fecha_contrato varchar2(11));
+
+create table libro(codigo integer primary key , funcionario_rut varchar2(15), constraint funcionario_rut_fk foreign key(funcionario_rut) references funcionario(rut), nombre_libro varchar2(40));
+
+begin
+insert into funcionario values('12456','Juan Lopez','Alamos 123', 450000,'cajero','Finanzas', '10/10/2005');
+insert into funcionario values('11345', 'José Torres', 'San pedro 146', 420000, 'contador', 'Finanzas','10/02/2004');
+insert into funcionario values('10778', 'Ana Morales', 'San jose 10', 410000, 'Administrativa', 'Secretaria','10/03/2005');
+insert into libro values(101, '11345','Las dos torres');
+insert into libro values(105, '10778','El codigo Da Vinci');
+insert into libro values(104, '12456','La quinta estrella');
+insert into libro values(107, '11345','Caballo de troya III');
+end;

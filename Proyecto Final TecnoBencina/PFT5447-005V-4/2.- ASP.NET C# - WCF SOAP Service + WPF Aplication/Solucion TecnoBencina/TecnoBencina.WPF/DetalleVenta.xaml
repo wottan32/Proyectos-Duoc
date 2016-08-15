@@ -1,0 +1,26 @@
+﻿<Window x:Class="TecnoBencina.WPF.DetalleVenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detalle de Venta" Height="370" Width="362" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Button Content="Imprimir" Height="23" HorizontalAlignment="Left" Margin="157,296,0,0" Name="btnImprimir" VerticalAlignment="Top" Width="75" Click="btnImprimir_Click" />
+        <Button Content="Cerrar" Height="23" HorizontalAlignment="Left" Margin="253,296,0,0" Name="btnCerrar" VerticalAlignment="Top" Width="75" Click="btnCerrar_Click" />
+        <Image Height="100" HorizontalAlignment="Left" Margin="228,21,0,0" Name="qrCode" Stretch="Fill" VerticalAlignment="Top" Width="100" />
+        <Label Content="Código Venta" Height="28" HorizontalAlignment="Left" Margin="22,21,0,0" Name="lblIdVenta" VerticalAlignment="Top" />
+        <Label Content="Combustible" Height="28" HorizontalAlignment="Left" Margin="22,123,0,0" Name="lblCombustible" VerticalAlignment="Top" />
+        <Label Content="Monto" Height="28" HorizontalAlignment="Left" Margin="223,157,0,0" Name="lblMonto" VerticalAlignment="Top" />
+        <Label Content="Litros" Height="28" HorizontalAlignment="Left" Margin="22,157,0,0" Name="lblLitros" VerticalAlignment="Top" />
+        <Label Content="Cód. Benef." Height="28" HorizontalAlignment="Left" Margin="22,225,0,0" Name="lblBeneficiario" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label Content="Nº Vale" Height="28" HorizontalAlignment="Left" Margin="22,191,0,0" Name="lblVale" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label Content="Surtidor" Height="28" HorizontalAlignment="Left" Margin="22,89,0,0" Name="lblSurtidor" VerticalAlignment="Top" />
+        <Label Content="Vendedor" Height="28" HorizontalAlignment="Left" Margin="22,55,0,0" Name="lblNombreVendedor" VerticalAlignment="Top" />
+        <Label Content="null" Height="28" HorizontalAlignment="Left" Margin="127,21,0,0" Name="lvlContentIdVenta" VerticalAlignment="Top" Foreground="#FF3B8EC1" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,225,0,0" Name="lblContentBeneficiario" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,191,0,0" Name="lvlContentVale" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,157,0,0" Name="lvlContentLitros" VerticalAlignment="Top" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="279,157,0,0" Name="lvlContentMonto" VerticalAlignment="Top" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,123,0,0" Name="lvlContentCombustible" VerticalAlignment="Top" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,89,0,0" Name="lvlContentSurtidor" VerticalAlignment="Top" />
+        <Label Content="null" Foreground="#FF3B8EC1" Height="28" HorizontalAlignment="Left" Margin="127,55,0,0" Name="lvlContentNombreVendedor" VerticalAlignment="Top" />
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="TecnoBencina.WPF.Operador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Operador" Height="331" Width="318" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Archivo">
+                <MenuItem Header="_Salir" Click="btnSalir_Click" />
+            </MenuItem>
+            <MenuItem Header="_Acciones">
+                <MenuItem Header="_Cambiar Estado de Venta" Click="MenuItemCambiarEstadoVenta_Click" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Label Content="Autenticado como" Height="28" HorizontalAlignment="Left" Margin="15,15,0,0" Name="lblWelcome" VerticalAlignment="Top" Width="127" />
+            <Label Content="nombreUsuario" Height="28" HorizontalAlignment="Left" Margin="124,15,0,0" Name="lblNombreUsuario" VerticalAlignment="Top" Width="127" />
+            <Grid Height="207" HorizontalAlignment="Left" Margin="15,57,0,0" Name="grdCargaCombustible" VerticalAlignment="Top" Width="269">
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="111,84,0,0" Name="cmbCombustibles" VerticalAlignment="Top" Width="135" />
+                <Label Content="Combustible" Height="28" HorizontalAlignment="Left" Margin="10,79,0,0" Name="lblCombustibles" VerticalAlignment="Top" Width="91" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="111,49,0,0" Name="cmbSurtidor" VerticalAlignment="Top" Width="135" />
+                <Label Content="Surtidor" Height="28" HorizontalAlignment="Left" Margin="10,44,0,0" Name="lblSurtidor" VerticalAlignment="Top" Width="91" />
+                <Label Content="Litros" Height="28" HorizontalAlignment="Left" Margin="10,113,0,0" Name="lblLitros" VerticalAlignment="Top" Width="91" />
+                <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="False" Margin="111,118,0,0" MaxLength="4" Name="txtLitros" Text="" VerticalAlignment="Top" Width="135" PreviewTextInput="txtLitros_PreviewTextInput" />
+                <Label Content="Carga de Combustible" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="lblCargaCombustible" VerticalAlignment="Top" Width="167" />
+                <Button Content="Confirmar" Height="23" HorizontalAlignment="Left" Margin="171,166,0,0" Name="btnCargarCombustible" VerticalAlignment="Top" Width="75" Click="btnCargarCombustible_Click" />
+            </Grid>           
+        </Grid>
+    </DockPanel>
+</Window>

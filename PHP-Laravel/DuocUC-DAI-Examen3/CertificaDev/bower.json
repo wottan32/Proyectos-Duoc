@@ -1,0 +1,19 @@
+{
+  "name": "CertificaDev",
+  "description": "Examen Forma B - Ignacio Formas",
+  "main": "public/index.php",
+  "authors": [
+    "i.formas@alumnos.duoc.cl"
+  ],
+  "license": "MIT",
+  "homepage": "http://iformas.azurewebsites.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ]
+}

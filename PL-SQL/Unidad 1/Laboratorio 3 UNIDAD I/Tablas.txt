@@ -1,0 +1,102 @@
+
+--CRECION DE TABLAS
+
+
+CREATE TABLE CLIENTE(
+rut varchar2(15), 
+nombre varchar2(20), 
+direccion varchar2(30), 
+comuna varchar2(15), 
+telefono varchar2(15), 
+edad varchar2(5)
+);
+
+BEGIN
+ALTER TABLE CLIENTE ADD CONSTRAINTrut_pk PRIMARY KEY(rut);
+ALTER TABLE CLIENTE MODIFY nombre CONSTRAINT nombreCliente_nn NOT NULL;
+ALTER TABLE CLIENTE ADD CONSTRAINTdireccion_uniq unique(direccion);
+ALTER TABLE CLIENTE MODIFY comuna CONSTRAINT comuna_nn NOT NULL;
+ALTER TABLE CLIENTE ADD CONSTRAINTtelefono_uniq unique(telefono);
+ALTER TABLE CLIENTE MODIFY edad CONSTRAINT edad_nn NOT NULL;
+END;
+
+CREATE TABLE CUENTA(
+numeroC varchar2(15), 
+tipo varchar2(15), 
+fecha_apertura date, 
+saldo integer, 
+rut varchar2(15));
+
+ALTER TABLE CUENTA ADD CONSTRAINTnumeroc_pk PRIMARY KEY(numeroC);
+ALTER TABLE CUENTA MODIFY tipo CONSTRAINT tipo_nn NOT NULL;
+ALTER TABLE CUENTA MODIFY fecha_apertura CONSTRAINT fecha_apertura_nn NOT NULL;
+ALTER TABLE CUENTA ADD CONSTRAINTchk_saldo check(saldo >=0);
+ALTER TABLE CUENTA ADD CONSTRAINTrut_fk foreign key(rut) references CLIENTE(rut);
+
+
+CREATE TABLE CAJERO(
+codigoC varchar2(5),
+nombre varchar2(25),
+direccion varchar2(30),
+telefono varchar2(15)
+);
+
+BEGIN
+ALTER TABLE CAJERO ADD CONSTRAINTcodigoC_pk PRIMARY KEY(codigoC);
+ALTER TABLE CAJERO MODIFY nombre CONSTRAINT nombreCajero_nn NOT NULL;
+ALTER TABLE CAJERO ADD CONSTRAINTdireccionCajero_uniq unique(direccion);
+ALTER TABLE CAJERO ADD CONSTRAINTtelefonoCajero_uniq unique(telefono);
+END;
+
+CREATE TABLE deposito(
+numeroD integer, 
+cantidad integer, 
+tipo varchar2(15), 
+fecha_deposito varchar2(12), 
+numeroC varchar2(15), 
+codigoC varchar2(5)
+);
+
+BEGIN
+ALTER TABLE deposito ADD CONSTRAINTnumeroD_pk PRIMARY KEY(numeroD);
+ALTER TABLE deposito ADD CONSTRAINTcantidad_chk CHECK(cantidad>0);
+ALTER TABLE deposito MODIFY tipo CONSTRAINT tipoDeposito_nn NOT NULL;
+ALTER TABLE deposito MODIFY fecha_deposito CONSTRAINT fecha_deposito_nn NOT NULL;
+ALTER TABLE deposito ADD CONSTRAINTnumeroC_fk foreign key(numeroC) references CUENTA(numeroC);
+ALTER TABLE deposito ADD CONSTRAINTcodigoC_fk foreign key(codigoC) references CAJERO(codigoC);
+END;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+begin
+--INSERCION DE CLIENTES
+INSERT INTO CLIENTE(rut,nombre,direccion,comuna,telefono,edad) values('10114567','Antonio Vera','Ecuador 456','La florida','6543234','44');
+INSERT INTO CLIENTE(rut,nombre,direccion,comuna,telefono,edad) values('9867543','Jorge Perez','Salamanca 486','La florida','7654345','47');
+INSERT INTO CLIENTE(rut,nombre,direccion,comuna,telefono,edad) values('8456567','Ana Muñoz','San Francisco 77','Macul','8325678','48');
+INSERT INTO CLIENTE(rut,nombre,direccion,comuna,telefono,edad) values('12345654','Ricardo Jerez','San Juan 44','La florida','6753456','40');
+
+--INSERCION DE CUENTAS
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('10111111','corriente','10/10/2010',700000,'10114567');
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('10123333','ahorro','01/05/2012',545000,'8456567');
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('10134444','corriente','09/06/2011',890000,'9867543');
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('10145555','ahorro','10/04/2012',450000,'10114567');
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('10157777','ahorro','06/04/2009',370000,'12345654');
+INSERT INTO CUENTA(numeroC,tipo,fecha_apertura,saldo,rut) values('11525888','vista','07/09/2008',56000,'9867543');
+
+--INSERCION DE CAJEROS
+INSERT INTO CAJERO(codigoC,nombre,direccion,telefono)  values('10','Alejandro Cofre','Porto Seguro 88','5674343');
+INSERT INTO CAJERO(codigoC,nombre,direccion,telefono)  values('20','Mauricio Yañez','Los presidentes 345','6754323');
+INSERT INTO CAJERO(codigoC,nombre,direccion,telefono)  values('30','Alejandra Vera','Los sauces 55','7654343');
+INSERT INTO CAJERO(codigoC,nombre,direccion,telefono)  values('40','Claudia Perez','Alpes 345','8643245');
+
+--INSERCION DE DEPOSITOS
+INSERT INTO deposito(numeroD,cantidad,tipo,fecha_deposito,numeroC,codigoC) values(10,54000,'efectivo','02/10/2015','10111111','30');
+INSERT INTO deposito(numeroD,cantidad,tipo,fecha_deposito,numeroC,codigoC) values(11,100000,'cheque','03/05/2015','10123333','10');
+INSERT INTO deposito(numeroD,cantidad,tipo,fecha_deposito,numeroC,codigoC) values(12,75000,'efectivo','03/10/2015','10157777','30');
+INSERT INTO deposito(numeroD,cantidad,tipo,fecha_deposito,numeroC,codigoC) values(13,95000,'efectivo','01/20/2015','10123333','20');
+INSERT INTO deposito(numeroD,cantidad,tipo,fecha_deposito,numeroC,codigoC) values(14,20000,'cheque','02/15/2015','10145555','40');
+end;
+
+
+
+

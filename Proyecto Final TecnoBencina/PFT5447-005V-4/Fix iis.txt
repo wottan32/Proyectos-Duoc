@@ -1,0 +1,6 @@
+Enable .net 4.0 http://stackoverflow.com/questions/4890245/how-to-add-asp-net-4-0-as-application-pool-on-iis-7-windows-7
+
+Update reference of Oracle.DataAccess to 2.112.3.0 (Done)
+
+Enable 32 bits apps in .net container
+http://www.alexjamesbrown.com/blog/development/could-not-load-file-or-assembly-chilkatdotnet2-or-one-of-its-dependencies-an-attempt-was-made-to-load-a-program-with-an-incorrect-format/

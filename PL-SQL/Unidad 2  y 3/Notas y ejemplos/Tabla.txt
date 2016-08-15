@@ -1,0 +1,145 @@
+CREATE TABLE Departamento(
+  numero number,
+  nombre varchar2(40) constraint nondep_nn NOT NULL,
+  anexo number(5) constraint anexo_nn NOT NULL,
+  constraint numero_pk primary key(numero));
+
+BEGIN
+
+	INSERT into departamento VALUES(101014,'Finanzas',3456);
+	INSERT into departamento VALUES(110115,'Contabilidad',3458);
+	INSERT into departamento VALUES(101514,'Informática',3478);
+	INSERT into departamento VALUES(110215,'Desarrollo',3466);
+
+END;
+
+
+---0
+--------------------------------------------------------------------------------
+set serveroutput on;
+
+DECLARE
+v_num number(10);
+v_anexo departamento.anexo%type;
+
+BEGIN
+	SELECT numero,anexo INTO v_num, v_anexo
+	FROM departamento
+	WHERE nombre='Informática';
+	
+	DBMS_OUTPUT.PUT_LINE('El numero del departamento es :' ||v_num);
+	DBMS_OUTPUT.PUT_LINE('El anexo del departamento es :' ||v_anexo);
+	
+END;
+
+---1 Crear un bloque pl/sql que muesre la cantidad de departamentos ergistrados en la base de datos
+--------------------------------------------------------------------------------
+
+DECLARE
+v_numDep number(10);
+
+BEGIN
+SELECT COUNT(numero) INTO v_numDep FROM departamento;
+DBMS_OUTPUT.PUT_LINE('El numero del departamentos :' ||v_numDep);
+END;
+
+
+
+--2 Crear un bloque pl/SQL que actualice el nombre del departamento informatica por computacion, se debe mostrar el antiguo y nuevo nombre del departamentro
+
+DECLARE
+	v_nombrenuevo departamento.nombre%type;
+	v_nombreantiguo departamento.nombre%type;
+	
+BEGIN
+	SELECT nombre INTO v_nombreantiguo
+	FROM departamento
+	WHERE nombre='Informática';
+
+	UPDATE departamento
+	SET nombre='Computación'
+	WHERE nombre=v_nombreantiguo;
+
+	SELECT nombre INTO v_nombrenuevo
+	FROM departamento
+	WHERE nombre='Computación';
+
+	DBMS_OUTPUT.PUT_LINE('El nombre antiguo era :' ||v_nombreantiguo);
+	DBMS_OUTPUT.PUT_LINE('El nombre nuevo es :' ||v_nombrenuevo);
+	
+END;
+
+
+--3. Crear un bloque que borre una fila de información mediante el código del departamento.
+
+DECLARE 
+	v_numDep departamento.numero%type
+
+BEGIN
+	DElETE  FROM departamento WHERE departamento.numero=v_numDep;
+
+END;
+
+
+
+EJERCICIO II
+Dada la tabla que está en el archivo Tablas Ejercicios que se encuentra en la Carpeta Laboratorio I, realizar los siguientes bloques:
+
+create table articulos(
+codarticulo int primary key, 
+nomarticulo varchar2(20) constraint nomarticulo_nn not null, 
+precio int constraint precio_nn not null
+);
+
+/*1. Insertar los siguientes datos a la tabla mediante un bloque PL/SQL:
+1, zapatilla, 20990
+2, buzo, 15000
+3, polera, 8500
+*/
+
+BEGIN
+INSERT INTO articulos VALUES(1, 'zapatilla', 20990);
+INSERT INTO articulos VALUES(2, 'buzo', 15000);
+INSERT INTO articulos VALUES(2, 'polera', 8500);
+END;
+
+
+2. Crear un bloque PL/SQL que muestre cuantos artículos hay en la base de datos.
+DECLARE
+	v_cantArticulos int(10);
+
+BEGIN
+	SELECT COUNT (*) INTO v_cantArticulos
+	FROM articulos;
+
+	DBMS_OUTPUT.PUT_LINE('La cantidad de articulos es :' ||v_cantArticulos);
+
+END;
+
+3. Crear un bloque PL/SQL que muestre el promedio y la suma de los precios de los artículos.
+
+
+
+
+
+INSTITUTO PROFESIONAL DuocUC
+ESCUELA DE INFORMÁTICA Y TELECOMUNICACIONES
+Profesor: Juan Cubillos G. Página 2 de 2
+4. Crear un bloque PL/SQL que muestre el precio mínimo y máximo de los precios de los artículos.
+5. Crear un bloque PL/SQL que muestre el precio del artículo cuyo nombre comienza con Z.
+6. Crear un bloque PL/SQL que muestre el precio de 3 buzos con un 30% de descuento.
+EJERCICIO III
+Dada la tabla que está en el archivo Tablas Ejercicios que se encuentra en la Carpeta Laboratorio I, realizar los siguientes bloques:
+1. Crear un bloque PL/SQL que muestre el código y nombre de la asignatura que dicta la profesora Camila Lara.
+2. Crear un bloque PL/SQL que muestre el código y nombre del profesor que pertenece al departamento de diseño grafico.
+3. Crear un bloque PL/SQL que muestre el código y nombre del departamento al que pertenece la profesora Ana Muñoz.
+4. Crear un Bloque PL/SQL que muestre la cantidad de profesores que dictan la asignatura Programación Básica.
+EJERCICIO IV
+Crear 10 bloques con enunciados utilizando
+
+
+
+
+
+
+ 

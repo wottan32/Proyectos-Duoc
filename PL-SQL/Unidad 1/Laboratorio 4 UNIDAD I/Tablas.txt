@@ -1,0 +1,129 @@
+create table socio (
+rut varchar2(15), 
+nombre varchar2(20), 
+apellido varchar2(30), 
+direccion varchar2(50), 
+comuna varchar2(15), 
+telefono varchar2(12), 
+fecha_nacimiento varchar2(10), 
+calificacion number(2,1),
+fecha_ingreso date, 
+credito varchar2(8), 
+situacion varchar2(20)
+);
+
+alter table socio add constraint rut primary key(rut);
+
+
+begin
+insert into socio values ('10114567','Antonio', 'Vera',' Ecuador 456 ','La FLORIDA','6543234','10/20/1974', 4.5,'10/15/2012','100000','Activo');
+insert into socio values ('9867543','Jorge', 'Pérez',' Salamanca 486 ','LA FLORIDA','7654345','05/01/1980',5.0,'05/10/2010','150000',null);
+insert into socio values ('8456567','Ana', 'Muñoz',' San Francisco 77 ','MACUL','8325678','12/28/1985',6.2,'08/17/2005','-1','Activo');
+insert into socio values ('12345654','Ricardo', 'Perez',' San Juan 44 ','LA FLORIDA','6753456','06/20/1983',4.9,'09/02/2013','90000',null);
+end;
+
+select * from socio;
+
+describe socio;
+
+
+FUNCIONES PREDEFINIDAS DE ORACLE
+1.- SYSDATE
+SELECT nombre, apellido, (SYSDATE-fecha_ingreso)/31 "Cantidad de Meses" FROM socio;
+SELECT nombre, apellido, (SYSDATE-fecha_ingreso)/365 "Cantidad de Años" FROM socio;
+
+SELECT SYSDATE FROM dual;
+
+2.- LAST_DAY
+SELECT nombre, apellido, fecha_ingreso FROM socio;
+SELECT nombre, apellido, LAST_DAY(fecha_ingreso) FROM socio;
+SELECT nombre, apellido, (LAST_DAY(fecha_ingreso)-fecha_ingreso) "Dias Proporcionales" FROM socio;
+
+3.- MONTHS_BETWEEN
+SELECT nombre, apellido, MONTHS_BETWEEN(SYSDATE, fecha_ingreso) FROM socio;
+
+4.- add months
+SELECT nombre, apellido, ADD_MONTHS(fecha_ingreso,4) FROM socio;
+SELECT nombre, apellido, ADD_MONTHS(fecha_ingreso,-5) FROM socio;
+
+5.- NEXT_DAY
+SELECT, nombre, apellido, fecha_ingreso, FROM socio;
+SELECT, nombre, apellido, NEXT_DAY(fecha_ingreso, 'Saturday') FROM socio;
+
+6.-. ROUND (APROXIMA HACIA ARRIBA O HACIA ABAJO)
+SELECT nombre, apellido, ROUND(fecha_ingreso, 'yyyy') FROM socio;
+SELECT nombre, apellido, ROUND(fecha_ingreso, 'mm') FROM socio;
+SELECT nombre, apellido, ROUND(fecha_ingreso, 'dd') FROM socio;
+
+7.- TRUNC (APROXIMA SIEMPRE HACIA ABAJO)
+SELECT nombre, apellido, TRUNC(fecha_ingreso, 'yyyy') FROM socio;
+SELECT nombre, apellido, TRUNC(fecha_ingreso, 'mm') FROM socio;
+SELECT nombre, apellido, TRUNC(fecha_ingreso, 'dd') FROM socio;
+
+8.- ROUND (Númerico)
+SELECT nombre, apellido, ROUND((SYSDATE-fecha_ingreso)/31) "Cantidad de Meses" FROM socio;
+SELECT nombre, apellido, ROUND((SYSDATE-fecha_ingreso)/31,1) "Cantidad de Años" FROM socio;
+
+9.- TRUNC (Númerico)
+SELECT nombre, apellido, TRUNC((SYSDATE-fecha_ingreso)/31) "Cantidad de Meses" FROM socio;
+SELECT nombre, apellido, TRUNC((SYSDATE-fecha_ingreso)/31,1) "Cantidad de Años" FROM socio;
+
+10.- TO_DATE
+SELECT nombre, apellido, trunc(SYSDATE- TO_DATE(fecha_nacimiento, 'mm/dd/yyyy')) "Dias" FROM socio;
+
+11.- TO_CHAR
+SELECT nombre, apellido, TO_CHAR(fecha_ingreso, 'month')"Mes de Ingreso" FROM socio;
+SELECT nombre, apellido, TO_CHAR(fecha_ingreso, 'year')"Año de Ingreso" FROM socio;
+SELECT nombre, apellido, TO_CHAR(fecha_ingreso, 'day')"Dia de Ingreso" FROM socio;
+
+12.- TO_NUMBER
+SELECT TO_NUMBER(credito) + 50000 "Nuevo Crédito" FROM socio;
+
+13.- NVL (null value) - cambio en la salida como se muestran los valores null
+SELECT nombre, apellido, situacion FROM socio;
+SELECT nombre, apellido, nvl(situacion, 'Inactivo') "Situacion" FROM socio;
+
+14.- NVL2 ()
+SELECT nombre, apellido, nvl2(situacion, 'ACTIVO', 'INACTIVO') "Situacion" FROM socio;
+
+15.- NULLIF - voy a tomar como nulo el-1 (salterlo)
+SELECT nombre, apellido, credito FROM socio;
+
+--saco el promedio de los creditos saltando los valores -1
+SELECT TRUNC(AVG(NULLIF(TO_NUMBER(credito),-1)))"Promedio" FROM socio;
+
+16.- DECODE
+SELECT nombre, apellido, situacion FROM socio;
+SELECT nombre, apellido, DECODE(situacion, null, 'PENDIENTE', 'APROBADO') "Situacion" FROM socio;
+
+17.- length
+SELECT nombre, LENGTH(NOMBRE) FROM socio;
+
+18.- instr (in string) - entrega la primera posicion donde encuentra la cedena buscada
+SELECT nombre, apellido, comuna FROM socio;
+SELECT nombre, apellido,instr(comuna, 'FLORIDA') FROM socio;
+
+19.-REPLACE
+SELECT nombre, apellido, comuna FROM socio;
+--remplaza florida por farfana
+SELECT nombre, apellido, REPLACE(comuna, 'FLORIDA', 'FARFANA') FROM socio;
+
+20.- SUBSTR
+--PARTE DESDE LA POSICION 3 Y AVANZA HASTA LA 8
+SELECT nombre, apellido, SUBSTR(comuna,3,8) FROM socio;
+
+21.- UPPER, LOWER
+SELECT UPPER(nombre), LOWER(apellido) FROM socio;
+
+22.- RPAD, LPAD
+--RELLENA HACIA LA IZQUIERDA O DERECHA CON LOS CARACTERES ASIGNADOS
+SELECT RPAD(nombre, 30,'-') FROM socio;
+SELECT LPAD(nombre, 30,'/') FROM socio;
+
+23.- RTRIM, LTRIM, TRIM
+SELECT nombre, direccion, apellido, RTRIM(direccion) FROM socio;
+SELECT nombre, direccion, apellido, LTRIM(direccion) FROM socio;
+SELECT nombre, direccion, apellido, TRIM(direccion) FROM socio;
+
+24.- CONCAT
+SELECT CONCAT (nombre, lpad(apellido,6,' ')) "SOCIO" FROM socio;

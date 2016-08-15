@@ -1,0 +1,18 @@
+create table empleado (
+num_emp int, constraint num_emp_pk primary key(num_emp),
+nombre varchar2(20),
+tarifa_hora int,
+profesion varchar2(20));
+
+create table edificio(
+num_edi int, constraint num_edi primary key (num_edi),
+direccion varchar2(30),
+tipo varchar2(20),
+nivel varchar2(5));
+
+create table asignacion(
+num_edi int, constraint num_edi_fk foreign key (num_edi)references edificio(num_edi),
+num_emp int, constraint num_emp_fk foreign key (num_emp)references empleado(num_emp),
+fecha_ini varchar2(20),
+num_dias int);
+

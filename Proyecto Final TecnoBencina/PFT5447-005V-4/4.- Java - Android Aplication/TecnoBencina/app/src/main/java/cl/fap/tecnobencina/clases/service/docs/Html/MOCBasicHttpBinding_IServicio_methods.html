@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MOCBasicHttpBinding_IServicio methods</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+    <script src='../Scripts/Blueprint_Scripts/Script.js' type='text/javascript'></script>
+    <style type="text/css">
+        .syntaxhighlighter {
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
+        }
+    </style>
+</head>
+<body>
+        <h2 id="ListarVentas">ListarVentas</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfVenta res = service.ListarVentas();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfVenta res = (MOCArrayOfVenta)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarVentasAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarVenta">BuscarVenta</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCVenta res = service.BuscarVenta(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCVenta res = (MOCVenta)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarVentaAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarVentaConVale">BuscarVentaConVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCVenta res = service.BuscarVentaConVale(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCVenta res = (MOCVenta)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarVentaConValeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateVenta">CreateVenta</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+Integer param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCVenta res = service.CreateVenta(param0,param1,param2,param3,param4,param5,param6);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+Integer param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCVenta res = (MOCVenta)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateVentaAsync (param0,param1,param2,param3,param4,param5,param6);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusVenta">SwitchStatusVenta</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+MOCEnums.EstadoVenta param1 = EstadoVenta.sin_confirmar;
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.SwitchStatusVenta(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+MOCEnums.EstadoVenta param1 = EstadoVenta.sin_confirmar;
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusVentaAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarPermisos">ListarPermisos</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfPermiso res = service.ListarPermisos();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfPermiso res = (MOCArrayOfPermiso)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarPermisosAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarPermisosPorRol">ListarPermisosPorRol</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfPermiso res = service.ListarPermisosPorRol(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfPermiso res = (MOCArrayOfPermiso)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarPermisosPorRolAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarRol">BuscarRol</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCRol res = service.BuscarRol(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCRol res = (MOCRol)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarRolAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="VerificarUsuario">VerificarUsuario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.VerificarUsuario(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.VerificarUsuarioAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarUsuarios">ListarUsuarios</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfUsuario res = service.ListarUsuarios();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfUsuario res = (MOCArrayOfUsuario)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarUsuariosAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarUsuario">BuscarUsuario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCUsuario res = service.BuscarUsuario(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCUsuario res = (MOCUsuario)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarUsuarioAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateUsuario">CreateUsuario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.CreateUsuario(param0,param1,param2,param3,param4,param5,param6);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+Integer param6 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateUsuarioAsync (param0,param1,param2,param3,param4,param5,param6);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateUsuario">UpdateUsuario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.UpdateUsuario(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateUsuarioAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusUsuario">SwitchStatusUsuario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+Boolean param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.SwitchStatusUsuario(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+Boolean param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusUsuarioAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdatePassword">UpdatePassword</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.UpdatePassword(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdatePasswordAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="hasPermission">hasPermission</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.hasPermission(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.hasPermissionAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="hasRole">hasRole</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.hasRole(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.hasRoleAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ValidaRut">ValidaRut</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.ValidaRut(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ValidaRutAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarEmpresas">ListarEmpresas</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfEmpresa res = service.ListarEmpresas();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfEmpresa res = (MOCArrayOfEmpresa)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarEmpresasAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarTalonariosPorEmpresa">ListarTalonariosPorEmpresa</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfTalonario res = service.ListarTalonariosPorEmpresa(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfTalonario res = (MOCArrayOfTalonario)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarTalonariosPorEmpresaAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarEmpresa">BuscarEmpresa</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCEmpresa res = service.BuscarEmpresa(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCEmpresa res = (MOCEmpresa)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarEmpresaAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateEmpresa">CreateEmpresa</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.CreateEmpresa(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateEmpresaAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateEmpresa">UpdateEmpresa</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.UpdateEmpresa(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateEmpresaAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusEmpresa">SwitchStatusEmpresa</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+Boolean param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.SwitchStatusEmpresa(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+Boolean param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusEmpresaAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarHistorialPrecio">ListarHistorialPrecio</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfHistorialPrecio res = service.ListarHistorialPrecio();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfHistorialPrecio res = (MOCArrayOfHistorialPrecio)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarHistorialPrecioAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarHistorialPrecioPorCombustible">ListarHistorialPrecioPorCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfHistorialPrecio res = service.ListarHistorialPrecioPorCombustible(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfHistorialPrecio res = (MOCArrayOfHistorialPrecio)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarHistorialPrecioPorCombustibleAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarHistorialPrecio">BuscarHistorialPrecio</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCHistorialPrecio res = service.BuscarHistorialPrecio(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCHistorialPrecio res = (MOCHistorialPrecio)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarHistorialPrecioAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarPrecioActualDeCombustible">BuscarPrecioActualDeCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+BigDecimal res = service.BuscarPrecioActualDeCombustible(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        BigDecimal res = (BigDecimal)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarPrecioActualDeCombustibleAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateHistorialPrecioCombustible">CreateHistorialPrecioCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+java.util.Date param1 = ...;//initialization code
+BigDecimal param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.CreateHistorialPrecioCombustible(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+java.util.Date param1 = ...;//initialization code
+BigDecimal param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateHistorialPrecioCombustibleAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateHistorialPrecioCombustible">UpdateHistorialPrecioCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+BigDecimal param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+Boolean res = service.UpdateHistorialPrecioCombustible(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+BigDecimal param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateHistorialPrecioCombustibleAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarCombustibles">ListarCombustibles</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCArrayOfCombustible res = service.ListarCombustibles();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCArrayOfCombustible res = (MOCArrayOfCombustible)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarCombustiblesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarCombustible">BuscarCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+Integer param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+MOCCombustible res = service.BuscarCombustible(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+Integer param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        MOCCombustible res = (MOCCombustible)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarCombustibleAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarCombustiblesPorSurtidor">BuscarCombustiblesPorSurtidor</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarCombustiblesPorSurtidor(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarCombustiblesPorSurtidorAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="TotalLitosPorCombustible">TotalLitosPorCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.TotalLitosPorCombustible(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.TotalLitosPorCombustibleAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CantidadDeCombustiblePorSurtidor">CantidadDeCombustiblePorSurtidor</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CantidadDeCombustiblePorSurtidor(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CantidadDeCombustiblePorSurtidorAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateCombustible">CreateCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CreateCombustible(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateCombustibleAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusCombustible">SwitchStatusCombustible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.SwitchStatusCombustible(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusCombustibleAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarSurtidores">ListarSurtidores</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.ListarSurtidores();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarSurtidoresAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarSurtidor">BuscarSurtidor</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarSurtidor(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarSurtidorAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateSurtidor">CreateSurtidor</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CreateSurtidor(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateSurtidorAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusSurtidor">SwitchStatusSurtidor</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.SwitchStatusSurtidor(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusSurtidorAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CargarORemoverCombusible">CargarORemoverCombusible</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CargarORemoverCombusible(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CargarORemoverCombusibleAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarTalonarios">ListarTalonarios</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.ListarTalonarios();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarTalonariosAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarTalonario">BuscarTalonario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarTalonario(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarTalonarioAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarTalonarioDeVale">BuscarTalonarioDeVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarTalonarioDeVale(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarTalonarioDeValeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateTalonario">CreateTalonario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CreateTalonario(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateTalonarioAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateTalonario">UpdateTalonario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.UpdateTalonario(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateTalonarioAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusTalonario">SwitchStatusTalonario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.SwitchStatusTalonario(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusTalonarioAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarVale">BuscarVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarVale(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarValeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarValesPorTalonario">BuscarValesPorTalonario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarValesPorTalonario(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarValesPorTalonarioAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateVale">CreateVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CreateVale(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateValeAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="MassCreateVale">MassCreateVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.MassCreateVale(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.MassCreateValeAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateVale">UpdateVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.UpdateVale(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateValeAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusVale">SwitchStatusVale</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.SwitchStatusVale(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusValeAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarBeneficiarios">ListarBeneficiarios</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.ListarBeneficiarios();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarBeneficiariosAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarBeneficiario">BuscarBeneficiario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarBeneficiario(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarBeneficiarioAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateBeneficiario">CreateBeneficiario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.CreateBeneficiario(param0,param1,param2,param3,param4,param5,param6,param7);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+String param6 = ...;//initialization code
+String param7 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.CreateBeneficiarioAsync (param0,param1,param2,param3,param4,param5,param6,param7);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateBeneficiario">UpdateBeneficiario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.UpdateBeneficiario(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateBeneficiarioAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SwitchStatusBeneficiario">SwitchStatusBeneficiario</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.SwitchStatusBeneficiario(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.SwitchStatusBeneficiarioAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BeneficiarioIsOverLimit">BeneficiarioIsOverLimit</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BeneficiarioIsOverLimit(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BeneficiarioIsOverLimitAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ListarAnulaciones">ListarAnulaciones</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.ListarAnulaciones();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.ListarAnulacionesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="BuscarAnulacion">BuscarAnulacion</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.BuscarAnulacion(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.BuscarAnulacionAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpdateAnulacion">UpdateAnulacion</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio("http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+String res = service.UpdateAnulacion(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import cl.fap.tecnobencina.clases.service;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+MOCBasicHttpBinding_IServicio service = new MOCBasicHttpBinding_IServicio(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc");
+service.UpdateAnulacionAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+</body>
+</html>
+

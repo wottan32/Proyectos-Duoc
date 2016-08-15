@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Servicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:38360/Servicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:38360/Servicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:38360/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TecnoBencina.Negocio" />
+      <xsd:import schemaLocation="http://localhost:38360/Servicio.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicio_ListarVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVentas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVentaConVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVentaConVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVentaConVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVentaConValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_cantLtsVendidosPorComb_InputMessage">
+    <wsdl:part name="parameters" element="tns:cantLtsVendidosPorComb" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_cantLtsVendidosPorComb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cantLtsVendidosPorCombResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_cantLtsVendidosPorCombuEnSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:cantLtsVendidosPorCombuEnSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_cantLtsVendidosPorCombuEnSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cantLtsVendidosPorCombuEnSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarPermisos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPermisos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarPermisos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPermisosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarPermisosPorRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPermisosPorRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarPermisosPorRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPermisosPorRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_VerificarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_VerificarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_hasPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasPermission" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_hasPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_hasRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasRole" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_hasRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ValidaRut_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaRut" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ValidaRut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaRutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarEmpresas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEmpresas" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarEmpresas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarEmpresasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarTalonariosPorEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTalonariosPorEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarTalonariosPorEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTalonariosPorEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarHistorialPrecio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHistorialPrecio" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarHistorialPrecio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHistorialPrecioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarHistorialPrecioPorCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHistorialPrecioPorCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarHistorialPrecioPorCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarHistorialPrecioPorCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarHistorialPrecio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarHistorialPrecio" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarHistorialPrecio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarHistorialPrecioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarPrecioActualDeCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPrecioActualDeCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarPrecioActualDeCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPrecioActualDeCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateHistorialPrecioCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHistorialPrecioCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateHistorialPrecioCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHistorialPrecioCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateHistorialPrecioCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHistorialPrecioCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateHistorialPrecioCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHistorialPrecioCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarCombustibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCombustibles" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarCombustibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCombustiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarCombustiblesPorSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCombustiblesPorSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarCombustiblesPorSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarCombustiblesPorSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_TotalLitosPorCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:TotalLitosPorCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_TotalLitosPorCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TotalLitosPorCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CantidadDeCombustiblePorSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CantidadDeCombustiblePorSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CantidadDeCombustiblePorSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CantidadDeCombustiblePorSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusCombustible_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusCombustible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusCombustible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusCombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarSurtidores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSurtidores" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarSurtidores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSurtidoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusSurtidor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusSurtidor" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusSurtidor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusSurtidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CargarORemoverCombusible_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarORemoverCombusible" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CargarORemoverCombusible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarORemoverCombusibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarTalonarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTalonarios" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarTalonarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTalonariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarTalonario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTalonario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarTalonario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTalonarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarTalonarioDeVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTalonarioDeVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarTalonarioDeVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTalonarioDeValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateTalonario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTalonario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateTalonario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTalonarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateTalonario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTalonario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateTalonario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTalonarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusTalonario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusTalonario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusTalonario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusTalonarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarValesPorTalonario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarValesPorTalonario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarValesPorTalonario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarValesPorTalonarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_MassCreateVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:MassCreateVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_MassCreateVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MassCreateValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusVale_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusVale" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusVale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarBeneficiarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarBeneficiarios" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarBeneficiarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarBeneficiariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarBeneficiario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarBeneficiario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateBeneficiario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_CreateBeneficiario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateBeneficiario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateBeneficiario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusBeneficiario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_SwitchStatusBeneficiario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwitchStatusBeneficiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BeneficiarioIsOverLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeneficiarioIsOverLimit" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BeneficiarioIsOverLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeneficiarioIsOverLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarAnulaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAnulaciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarAnulaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAnulacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarAnulacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_BuscarAnulacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateAnulacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_UpdateAnulacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicio">
+    <wsdl:operation name="ListarVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarVentas" message="tns:IServicio_ListarVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarVentasResponse" message="tns:IServicio_ListarVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarVenta" message="tns:IServicio_BuscarVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarVentaResponse" message="tns:IServicio_BuscarVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVentaConVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarVentaConVale" message="tns:IServicio_BuscarVentaConVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarVentaConValeResponse" message="tns:IServicio_BuscarVentaConVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateVenta" message="tns:IServicio_CreateVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateVentaResponse" message="tns:IServicio_CreateVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusVenta" message="tns:IServicio_SwitchStatusVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusVentaResponse" message="tns:IServicio_SwitchStatusVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cantLtsVendidosPorComb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/cantLtsVendidosPorComb" message="tns:IServicio_cantLtsVendidosPorComb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/cantLtsVendidosPorCombResponse" message="tns:IServicio_cantLtsVendidosPorComb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cantLtsVendidosPorCombuEnSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/cantLtsVendidosPorCombuEnSurtidor" message="tns:IServicio_cantLtsVendidosPorCombuEnSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/cantLtsVendidosPorCombuEnSurtidorResponse" message="tns:IServicio_cantLtsVendidosPorCombuEnSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermisos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarPermisos" message="tns:IServicio_ListarPermisos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarPermisosResponse" message="tns:IServicio_ListarPermisos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermisosPorRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarPermisosPorRol" message="tns:IServicio_ListarPermisosPorRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarPermisosPorRolResponse" message="tns:IServicio_ListarPermisosPorRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarRol" message="tns:IServicio_BuscarRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarRolResponse" message="tns:IServicio_BuscarRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarRoles" message="tns:IServicio_ListarRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarRolesResponse" message="tns:IServicio_ListarRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/VerificarUsuario" message="tns:IServicio_VerificarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/VerificarUsuarioResponse" message="tns:IServicio_VerificarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarUsuarios" message="tns:IServicio_ListarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarUsuariosResponse" message="tns:IServicio_ListarUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarUsuario" message="tns:IServicio_BuscarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarUsuarioResponse" message="tns:IServicio_BuscarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateUsuario" message="tns:IServicio_CreateUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateUsuarioResponse" message="tns:IServicio_CreateUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateUsuario" message="tns:IServicio_UpdateUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateUsuarioResponse" message="tns:IServicio_UpdateUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusUsuario" message="tns:IServicio_SwitchStatusUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusUsuarioResponse" message="tns:IServicio_SwitchStatusUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdatePassword" message="tns:IServicio_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdatePasswordResponse" message="tns:IServicio_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/hasPermission" message="tns:IServicio_hasPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/hasPermissionResponse" message="tns:IServicio_hasPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/hasRole" message="tns:IServicio_hasRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/hasRoleResponse" message="tns:IServicio_hasRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ValidaRut" message="tns:IServicio_ValidaRut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ValidaRutResponse" message="tns:IServicio_ValidaRut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmpresas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarEmpresas" message="tns:IServicio_ListarEmpresas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarEmpresasResponse" message="tns:IServicio_ListarEmpresas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTalonariosPorEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarTalonariosPorEmpresa" message="tns:IServicio_ListarTalonariosPorEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarTalonariosPorEmpresaResponse" message="tns:IServicio_ListarTalonariosPorEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarEmpresa" message="tns:IServicio_BuscarEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarEmpresaResponse" message="tns:IServicio_BuscarEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateEmpresa" message="tns:IServicio_CreateEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateEmpresaResponse" message="tns:IServicio_CreateEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateEmpresa" message="tns:IServicio_UpdateEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateEmpresaResponse" message="tns:IServicio_UpdateEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusEmpresa" message="tns:IServicio_SwitchStatusEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusEmpresaResponse" message="tns:IServicio_SwitchStatusEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorialPrecio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarHistorialPrecio" message="tns:IServicio_ListarHistorialPrecio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarHistorialPrecioResponse" message="tns:IServicio_ListarHistorialPrecio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorialPrecioPorCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarHistorialPrecioPorCombustible" message="tns:IServicio_ListarHistorialPrecioPorCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarHistorialPrecioPorCombustibleResponse" message="tns:IServicio_ListarHistorialPrecioPorCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHistorialPrecio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarHistorialPrecio" message="tns:IServicio_BuscarHistorialPrecio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarHistorialPrecioResponse" message="tns:IServicio_BuscarHistorialPrecio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPrecioActualDeCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarPrecioActualDeCombustible" message="tns:IServicio_BuscarPrecioActualDeCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarPrecioActualDeCombustibleResponse" message="tns:IServicio_BuscarPrecioActualDeCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistorialPrecioCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateHistorialPrecioCombustible" message="tns:IServicio_CreateHistorialPrecioCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateHistorialPrecioCombustibleResponse" message="tns:IServicio_CreateHistorialPrecioCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHistorialPrecioCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateHistorialPrecioCombustible" message="tns:IServicio_UpdateHistorialPrecioCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateHistorialPrecioCombustibleResponse" message="tns:IServicio_UpdateHistorialPrecioCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCombustibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarCombustibles" message="tns:IServicio_ListarCombustibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarCombustiblesResponse" message="tns:IServicio_ListarCombustibles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarCombustible" message="tns:IServicio_BuscarCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarCombustibleResponse" message="tns:IServicio_BuscarCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCombustiblesPorSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarCombustiblesPorSurtidor" message="tns:IServicio_BuscarCombustiblesPorSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarCombustiblesPorSurtidorResponse" message="tns:IServicio_BuscarCombustiblesPorSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalLitosPorCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/TotalLitosPorCombustible" message="tns:IServicio_TotalLitosPorCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/TotalLitosPorCombustibleResponse" message="tns:IServicio_TotalLitosPorCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CantidadDeCombustiblePorSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CantidadDeCombustiblePorSurtidor" message="tns:IServicio_CantidadDeCombustiblePorSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CantidadDeCombustiblePorSurtidorResponse" message="tns:IServicio_CantidadDeCombustiblePorSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateCombustible" message="tns:IServicio_CreateCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateCombustibleResponse" message="tns:IServicio_CreateCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusCombustible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusCombustible" message="tns:IServicio_SwitchStatusCombustible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusCombustibleResponse" message="tns:IServicio_SwitchStatusCombustible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSurtidores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarSurtidores" message="tns:IServicio_ListarSurtidores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarSurtidoresResponse" message="tns:IServicio_ListarSurtidores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarSurtidor" message="tns:IServicio_BuscarSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarSurtidorResponse" message="tns:IServicio_BuscarSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateSurtidor" message="tns:IServicio_CreateSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateSurtidorResponse" message="tns:IServicio_CreateSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusSurtidor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusSurtidor" message="tns:IServicio_SwitchStatusSurtidor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusSurtidorResponse" message="tns:IServicio_SwitchStatusSurtidor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarORemoverCombusible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CargarORemoverCombusible" message="tns:IServicio_CargarORemoverCombusible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CargarORemoverCombusibleResponse" message="tns:IServicio_CargarORemoverCombusible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTalonarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarTalonarios" message="tns:IServicio_ListarTalonarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarTalonariosResponse" message="tns:IServicio_ListarTalonarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTalonario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarTalonario" message="tns:IServicio_BuscarTalonario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarTalonarioResponse" message="tns:IServicio_BuscarTalonario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTalonarioDeVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarTalonarioDeVale" message="tns:IServicio_BuscarTalonarioDeVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarTalonarioDeValeResponse" message="tns:IServicio_BuscarTalonarioDeVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTalonario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateTalonario" message="tns:IServicio_CreateTalonario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateTalonarioResponse" message="tns:IServicio_CreateTalonario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTalonario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateTalonario" message="tns:IServicio_UpdateTalonario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateTalonarioResponse" message="tns:IServicio_UpdateTalonario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusTalonario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusTalonario" message="tns:IServicio_SwitchStatusTalonario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusTalonarioResponse" message="tns:IServicio_SwitchStatusTalonario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarVale" message="tns:IServicio_BuscarVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarValeResponse" message="tns:IServicio_BuscarVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarValesPorTalonario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarValesPorTalonario" message="tns:IServicio_BuscarValesPorTalonario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarValesPorTalonarioResponse" message="tns:IServicio_BuscarValesPorTalonario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateVale" message="tns:IServicio_CreateVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateValeResponse" message="tns:IServicio_CreateVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MassCreateVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/MassCreateVale" message="tns:IServicio_MassCreateVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/MassCreateValeResponse" message="tns:IServicio_MassCreateVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateVale" message="tns:IServicio_UpdateVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateValeResponse" message="tns:IServicio_UpdateVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusVale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusVale" message="tns:IServicio_SwitchStatusVale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusValeResponse" message="tns:IServicio_SwitchStatusVale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarBeneficiarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarBeneficiarios" message="tns:IServicio_ListarBeneficiarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarBeneficiariosResponse" message="tns:IServicio_ListarBeneficiarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarBeneficiario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarBeneficiario" message="tns:IServicio_BuscarBeneficiario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarBeneficiarioResponse" message="tns:IServicio_BuscarBeneficiario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBeneficiario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/CreateBeneficiario" message="tns:IServicio_CreateBeneficiario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/CreateBeneficiarioResponse" message="tns:IServicio_CreateBeneficiario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBeneficiario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateBeneficiario" message="tns:IServicio_UpdateBeneficiario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateBeneficiarioResponse" message="tns:IServicio_UpdateBeneficiario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusBeneficiario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/SwitchStatusBeneficiario" message="tns:IServicio_SwitchStatusBeneficiario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/SwitchStatusBeneficiarioResponse" message="tns:IServicio_SwitchStatusBeneficiario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeneficiarioIsOverLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BeneficiarioIsOverLimit" message="tns:IServicio_BeneficiarioIsOverLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BeneficiarioIsOverLimitResponse" message="tns:IServicio_BeneficiarioIsOverLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAnulaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarAnulaciones" message="tns:IServicio_ListarAnulaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarAnulacionesResponse" message="tns:IServicio_ListarAnulaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAnulacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarAnulacion" message="tns:IServicio_BuscarAnulacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarAnulacionResponse" message="tns:IServicio_BuscarAnulacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnulacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/UpdateAnulacion" message="tns:IServicio_UpdateAnulacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/UpdateAnulacionResponse" message="tns:IServicio_UpdateAnulacion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarVentas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVentaConVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarVentaConVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantLtsVendidosPorComb">
+      <soap:operation soapAction="http://tempuri.org/IServicio/cantLtsVendidosPorComb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantLtsVendidosPorCombuEnSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/cantLtsVendidosPorCombuEnSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermisos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarPermisos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermisosPorRol">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarPermisosPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarRol">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRoles">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/VerificarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasPermission">
+      <soap:operation soapAction="http://tempuri.org/IServicio/hasPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasRole">
+      <soap:operation soapAction="http://tempuri.org/IServicio/hasRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRut">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ValidaRut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEmpresas">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarEmpresas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTalonariosPorEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarTalonariosPorEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorialPrecio">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarHistorialPrecio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarHistorialPrecioPorCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarHistorialPrecioPorCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarHistorialPrecio">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarHistorialPrecio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPrecioActualDeCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarPrecioActualDeCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistorialPrecioCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateHistorialPrecioCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHistorialPrecioCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateHistorialPrecioCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCombustibles">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarCombustibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCombustiblesPorSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarCombustiblesPorSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalLitosPorCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/TotalLitosPorCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CantidadDeCombustiblePorSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CantidadDeCombustiblePorSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusCombustible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusCombustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSurtidores">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarSurtidores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusSurtidor">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusSurtidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarORemoverCombusible">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CargarORemoverCombusible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTalonarios">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarTalonarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTalonario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarTalonario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTalonarioDeVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarTalonarioDeVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTalonario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateTalonario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTalonario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateTalonario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusTalonario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusTalonario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarValesPorTalonario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarValesPorTalonario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MassCreateVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/MassCreateVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusVale">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarBeneficiarios">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarBeneficiarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarBeneficiario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarBeneficiario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBeneficiario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/CreateBeneficiario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBeneficiario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateBeneficiario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwitchStatusBeneficiario">
+      <soap:operation soapAction="http://tempuri.org/IServicio/SwitchStatusBeneficiario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeneficiarioIsOverLimit">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BeneficiarioIsOverLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAnulaciones">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarAnulaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarAnulacion">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnulacion">
+      <soap:operation soapAction="http://tempuri.org/IServicio/UpdateAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="BasicHttpBinding_IServicio" binding="tns:BasicHttpBinding_IServicio">
+      <soap:address location="http://localhost:38360/Servicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

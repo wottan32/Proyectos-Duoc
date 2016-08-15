@@ -1,0 +1,7 @@
+create table socio(num_soc int, nombre varchar2(100), direccion varchar2(60), telefono int)
+
+insert into socio values(1,'Roberto Barrera','San bernardo',9965551)
+insert into socio values(2,'Eduardo','Talagante',1111111)
+
+create table socio_baja(num_soc int, nombre varchar2(100), direccion varchar2(60), telefono int,fecha_baja date)
+

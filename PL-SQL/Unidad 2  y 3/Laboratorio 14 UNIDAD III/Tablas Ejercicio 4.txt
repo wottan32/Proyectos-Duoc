@@ -1,0 +1,15 @@
+create table departamento (codep int primary key,nombre varchar2(60), gasto_total number)
+
+create table empleados (rut varchar2(15) primary key,nombre varchar2(40),direccion varchar2(50),sueldo number,codept int, constraint codep2_fk foreign key(codept) references departamento(codep));
+
+begin
+insert into departamento values(10,'Informática',725000);
+insert into departamento values(20,'Ventas',1050000);
+insert into departamento values(30,'Desarrollo',550000);
+
+insert into empleados values('102030','José López','Los sauces 34',350000,10);
+insert into empleados values('113456','Juan Cerda','Maipú 3456',450000,20);
+insert into empleados values('124567','Ana Morales','Ecuador 567',375000,10);
+insert into empleados values('109876','Julio Osorio','Las lilas 45',550000,30);
+insert into empleados values('145435','Rosa Gutiérrez','Paraguay 3456',600000,20);
+end;

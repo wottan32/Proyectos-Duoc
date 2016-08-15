@@ -1,0 +1,16 @@
+1.- Cargar Script SQL en una base de datos Mysql
+2.- Configurar datos de conexión a base de datos en CertificaDev/.env
+3.- Verificar los siguientes párametros en CertificaDev/config/app.php
+	- 'url' => env('APP_URL', 'http://localhost')
+		en donde http://localhost corresponde a la url de la aplicacion
+	
+	- 'timezone' => 'America/La_Paz'
+		en donde la zona horaria debe ser equivalente a la de chile (actualmente GMT -4) o este sincronizada 
+		con la del sistema.
+		
+		PD: 'America/Santiago' retorna GMT -3
+
+4.- En php.ini agregar/o moidficar xdebug.max_nesting_level=200
+		
+5.- Enjoy desde /public, ex: http://localhost/CertificaDev/public
+		

@@ -1,2 +1,2 @@
 # Proyectos-Duoc
-Compilacion de todos los proyectos realizados en duoc
+Compilación de todos los proyectos realizados en duoc

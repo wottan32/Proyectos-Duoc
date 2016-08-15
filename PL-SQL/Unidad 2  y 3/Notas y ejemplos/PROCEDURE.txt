@@ -1,0 +1,49 @@
+
+
+CREATE TABLE Empleados(
+	emp_no VARCHAR2(12) constraint
+	Pk_emp_no primary key, 
+	nombre VARCHAR2(50) constraint
+	nn_nombre not null,  
+	oficio VARCHAR2 (20) 
+	constraint nn_oficio not null
+	);
+
+
+
+BEGIN
+	INSERT INTO empleados values ('1010', 'Juan Perez', 'director');
+	INSERT INTO empleados values ('1011', 'jose Donoso', 'inspector');
+	INSERT INTO empleados values ('1012', 'Juan Vera', 'docente');
+	INSERT INTO empleados values ('1013', 'Ana Moya', 'docente');
+	INSERT INTO empleados values ('1014', 'Marta Canales', 'docente');
+	INSERT INTO empleados values ('1015', 'Miguel Lara', 'docente');
+END;
+
+set serveroutput on;
+
+
+--EJEMPLO 1
+--------------------------------------------------------------------------------
+
+DECLARE
+	CREATE OR REPLACE PROCEDURE mostrar1(p VARCHAR2) IS
+	nom empleados.nombre%TYPE;
+	ofi empleados.oficio%TYPE;
+
+
+
+BEGIN
+SELECT nombre, oficio INTO nom, ofi FROM empleados WHERE emp_no=p;
+
+DBMS_OUTPUT.PUT_LINE('Nombre: '||nom);
+DBMS_OUTPUT.PUT_LINE('Oficio: '||ofi);
+
+EXCEPTION
+WHEN no_data_found THEN
+DBMS_OUTPUT.PUT_LINE('No existe el empleado');
+
+END;
+
+bloque de llamado
+BEGIN

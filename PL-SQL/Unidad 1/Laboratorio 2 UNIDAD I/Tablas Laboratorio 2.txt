@@ -1,0 +1,160 @@
+drop table libro;
+drop table funcionario;
+drop table departamento;
+
+create table departamento(
+codigo varchar2 (20) primary key, 
+nombre varchar2 (50)
+);
+
+create table funcionario(
+rut varchar2(20) primary key, 
+nombre varchar2(20), 
+direccion varchar2(45), 
+sueldo number(10), 
+tipo varchar2(20), 
+especialidad varchar2(45), 
+fecha_contrato varchar2(20),
+codigo_dep varchar2(20), 
+foreign key(codigo_dep) references departamento(codigo)
+);
+
+create table libro(
+codigo number(6), 
+rut varchar2(20), 
+nombre_libro varchar2(20),
+primary key(codigo),
+foreign key(rut) references funcionario(rut)
+);
+
+
+begin
+Insert into departamento values ('10', 'Computación');
+Insert into departamento values ('20', 'Desarrollo');
+Insert into departamento values ('30', 'Gerencia');
+Insert into funcionario values ('12456', 'Juan López', 'Álamos 123', 450000,  'Finanzas', 'Cajero','10/10/2005', '10');
+Insert into funcionario values ('11345', 'José Torres', 'San pedro 146', 420000, 'Finanzas','Contador', '10/02/2004', '30');
+Insert into funcionario values ('10778', 'Ana  Morales', 'San José 10', 410000, 'Administrativo', 'Secretaria','10/03/2005', '20');
+Insert into funcionario values ('13561', 'Juan Sosa', 'Paraguay 33', 350000, 'Finanzas', 'Cajero','10/10/2002', '20');
+Insert into funcionario values ('14345', 'Carolina Mena', 'Las Lilas 34', 400000, 'Administrativo', 'Secretaria','12/10/2005', '10');
+Insert into libro values (101, '11345','Las Dos Torres');
+Insert into libro values (105, '10778','El Código Da Vinci');
+Insert into libro values (104, '12456','La Quinta Estrella');
+Insert into libro values (107, '11345','Caballo de Troya III');
+end;
+
+
+I. Group By:
+1. Mostrar la suma de los sueldos de los empleados agrupados por tipo.
+SELECT tipo "Tipo", sum(sueldo) "Sueldo" from funcionario group by tipo;
+
+2. Mostrar el promedio de los sueldos de cada especialidad de empleados.
+select especialidad, AVG(sueldo)"Promedio de Sueldos" from funcionario group by especialidad;
+
+3. Mostrar cuantos empleados hay de cada tipo.
+select tipo "Tipo", count(*)"Cantidad de Empelados" from funcionario group by tipo;
+
+4. Mostrar la cantidad de libros que fueron pedidos por cada tipo de empleado.
+select count(*), tipo
+from libro, funcionario
+where funcionario.rut= libro.rut
+group by tipo;
+
+
+5. Mostrar la suma de cada tipo de empleado cuyo sueldo sea mayor a 400000.
+select tipo "Tipo", sum(sueldo) "Suma de Sueldos" from funcionario where sueldo> 400000 group by tipo;
+
+II. Vistas:
+1. Crear una vista que muestre el nombre, dirección y nombre de los libros pedidos por cada empleado
+create or replace view DirNombLib as
+select  nombre, direccion, nombre_libro from funcionario, libro where funcionario.rut=libro.rut
+
+2. Crear una vista que muestre los nombres de los empleados que no han pedido libros.
+select nombre from funcionario where funcionario.rut not in (select libro.rut from libro)
+
+3. Crear una vista que muestre el nombre y especialidad de los funcionarios pertenecientes al departamento de computación
+create or replace view NombEspDep as
+select  funcionario.nombre, funcionario.especialidad  from funcionario, departamento where departamento.codigo=10 and funcionario.codigo_dep=10
+
+4. Crear una vista que muestre el nombre, tipo de funcionario y nombre del departamento de los funcionarios que han pedido libros.
+select funcionario.nombre, funcionario.tipo, departamento.nombre from departamento, funcionario, libro where departamento.codigo=(select funcionario.codigo_dep from funcionario)
+
+5. Crear una vista que muestre el promedio de los sueldos de los empleados que trabajan en el departamento de Desarrollo.
+create or replace view PromSueldDesar as
+select avg(funcionario.sueldo)  "Promedio sueldo de empleados" from departamento, funcionario where departamento.codigo=20 and funcionario.codigo_dep=20
+
+III. Crear 5 consultas con enunciados con group by y 5 con vistas distintas a los ejercicios I y II; si es necesario agregue campos a la base de datos
+
+1.- Mostrar la cantidad de funcionarios por especialidad
+select count(rut) from funcionario group by especialidad;
+
+2.- Mostrar el promedio de los sueldos de cada tipo de empleado
+select tipo, AVG(sueldo)"Promedio de Sueldos" from funcionario group by tipo;
+
+3.- Mostrar la suma de cada tipo de empleado cuyo sueldo sea mayor a 500000
+select tipo "Tipo", sum(sueldo) "Suma de Sueldos" from funcionario where sueldo> 500000 group by tipo;
+
+4.-  Mostrar la suma de los sueldos de los empleados agrupados por especialidad.
+SELECT especialidad, sum(sueldo) "Sueldo" from funcionario group by especialidad;
+
+5.- Mostrar la suma de los sueldos de los empleados agrupados por tipo mas un bono de 50000;
+SELECT tipo, sum(sueldo+50000) "Sueldo" from funcionario group by tipo;
+
+
+1. Vista que muestre la suma de los sueldos de los empleados agrupados por tipo.
+create view v1 as
+SELECT tipo "Tipo", sum(sueldo) "Sueldo" from funcionario group by tipo;
+
+2. Vista que muestre el promedio de los sueldos de cada especialidad de empleados.
+create view v2 as
+select especialidad, AVG(sueldo)"Promedio de Sueldos" from funcionario group by especialidad;
+
+3. Vista que muestre cuantos empleados hay de cada tipo.
+create view v3 as
+select tipo "Tipo", count(*)"Cantidad de Empelados" from funcionario group by tipo;
+
+4. Vista que muestre la cantidad de libros que fueron pedidos por cada tipo de empleado.
+create view v4 as
+select count(*), tipo
+from libro, funcionario
+where funcionario.rut= libro.rut
+group by tipo;
+
+5. Vista que muestre  la suma de cada tipo de empleado cuyo sueldo sea mayor a 400000.
+create view v5 as
+select tipo "Tipo", sum(sueldo) "Suma de Sueldos" from funcionario where sueldo> 400000 group by tipo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

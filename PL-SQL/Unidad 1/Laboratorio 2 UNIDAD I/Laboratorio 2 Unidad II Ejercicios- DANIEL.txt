@@ -1,0 +1,347 @@
+EJERCICIO 1
+---------------------------------------
+create table ventas(numero int constraint numero_pk primary key,
+fecha date constraint fecha_chk check (fecha>to_date('01/01/0001','dd-mm-yyyy')),
+monto number constraint monto_chk check (monto>0));
+
+begin
+	insert into ventas values(1,to_date('04/01/2013','dd-mm-yyyy'),15000);
+	insert into ventas values(2,to_date('01/03/2013','dd-mm-yyyy'),3000);
+	insert into ventas values(3,to_date('24/03/2013','dd-mm-yyyy'),7000);
+	insert into ventas values(4,to_date('13/02/2013','dd-mm-yyyy'),10000);
+	insert into ventas values(5,to_date('04/01/2013','dd-mm-yyyy'),11000);
+end;
+
+Dada la tabla que está en el archivo Tablas Ejercicios que se encuentra en la Carpeta Laboratorio II, realizar los siguientes bloques:
+
+1. Crear un bloque PL/SQL que muestre el mensaje “Ventas Insuficientes” si la cantidad de ventas realizadas
+ en una determinada fecha es menor a 3, en caso contrario deberá mostrar el mensaje “Ventas suficientes”
+---------------------------------------------------------------------------------------------------------------------------------------
+declare
+	contar number(10);
+
+begin
+	select count(numero) into contar from ventas
+	where fecha between to_date('01/01/2013', 'dd-mm-yyyy') and to_date('31/01/2013', 'dd-mm-yyyy');
+	if contar < 3 then
+	  dbms_output.put_line('Ventas Insuficientes');
+	else
+	  dbms_output.put_line('Ventas Suficientes');
+	end if;
+end
+
+2. Crear un bloque PL/SQL que muestre el mensaje “Montos Insuficientes” si la suma de los montos de una determinada fecha es menor a 50000, 
+en caso contrario deberá mostrar el mensaje “Montos Suficientes”.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+declare
+	condicion ventas.monto%type;
+	
+begin
+	select sum(monto) into condicion from ventas
+	where fecha between to_date('01/01/2013','dd-mm-yyyy') and to_date('31/01/2013','dd-mm-yyyy');
+	if condicion < 50000 then
+		dbms_output.put_line('Montos Insuficientes');
+	else
+		dbms_output.put_line('Montos Suficientes');
+	end if;
+end
+
+3. Crear un bloque PL/SQL que muestre el monto de la venta. Si la venta es mayor a 10000, deberá mostrar el mensaje “VENTA MAYOR BAJA”.
+ en caso contrario deberá mostrar el mensaje “VENTA MAYOR NORMAL”.
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  declare
+	montoVenta ventas.monto%type;
+ 
+begin
+	select sum(monto) into montoVenta from ventas
+	where fecha = to_date('04/01/2013','dd-mm-yyyy');
+	
+	if montoVenta > 10000 then
+		dbms_output.put_line('Venta Mayor Baja');
+	else
+		dbms_output.put_line('Venta Mayor Normal');
+	end if;
+end
+
+ 
+4. Crear un bloque PL/SQL que muestre el promedio de montos dentro de un rango de fecha (utilizar operador between).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Declare
+	prom Number(10);
+
+begin
+	select avg(monto) into prom from ventas 
+	where fecha between to_date('01/01/2013', 'dd-mm-yyyy') and to_date('31/01/2013', 'dd-mm-yyyy');
+
+	dbms_output.put_line('Respuesta 4 Ejercicio 1 ');
+	dbms_output.put_line('Promedio en el mes de Enero: ' || prom);
+end
+
+
+EJERCICIO 2
+---------------------------------------------
+
+create table producto(codprod varchar2(10) constraint codprod_pk primary key,
+nomprod varchar2(50) constraint nomprod_nn not null,
+marca varchar2(50) constraint marca_nn not null,
+precio number constraint precio_chk check (precio>0));
+
+begin
+	insert into producto values ('101','mantequilla','soprole',900);
+	insert into producto values ('201','aceite','miraflores',1250);
+	insert into producto values ('301','leche','soprole',470);
+	insert into producto values ('401','arroz','Miraflores',450);
+end;
+
+Dada la tabla que está en el archivo Tablas Ejercicios que se encuentra en la Carpeta Laboratorio II, realizar los siguientes bloques:
+
+1. Crear bloque PL/SQL que muestre el precio del producto arroz; luego borré el producto arroz de la tabla Producto por el código.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+declare 
+	precioProduc producto.precio%type;
+	nomProduc producto.nomprod%type;
+
+begin
+	select precio, nomprod into precioProduc, nomProduc from producto where nomprod = 'arroz';
+
+	if nomProduc =  'arroz' then
+		dbms_output.put_line('Precio Arroz : ' || precioProduc);
+		delete from producto where nomProduc = 'arroz';
+	end if;
+end
+
+
+2. Crear un bloque PL/SQL que muestre el promedio, suma, máximo y mínimo de los productos registrados en la tabla productos.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+declare
+	promProd number(10);
+	sumProd number(10);
+	maxProd number(10);
+	minProd number(10);
+
+begin
+	select avg(precio), sum(precio), max(precio), min(precio)
+	into promProd, sumProd, maxProd, minProd
+	from producto;
+
+	dbms_output.put_line('Respuesta 02 Ejercicio 2');
+	dbms_output.put_line(' ');
+	dbms_output.put_line('Promedio: ' || promProd);
+	dbms_output.put_line('Suma: ' || sumProd);
+	dbms_output.put_line('Maximo: ' || maxProd);
+	dbms_output.put_line('Minimo: ' || minProd);
+end
+
+3. Crear bloque PL/SQL que por medio del código de producto actualice su precio según las siguientes indicaciones. Si el producto tiene
+un precio menor a 500 pesos, su precio debe ser aumentado en 50 pesos. Si está entre 500 y 1000 pesos su precio subirá 20 pesos 
+y si excede los 1000 pesos., el precio del producto debe subir 25 pesos. Si el precio fuese NULL, el aumento sería 0.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Revisar
+declare 
+	precioProduc producto.precio%type;
+	nuevoPrecio Number;
+	codprod Number;
+
+begin
+	select codprod, precio 
+	into codigoProduc, precioProduc
+	from producto
+	where codprod = 301;
+	
+ 
+		if precioProduc < 500 then
+			update producto set precio = precio + 50; 
+			dbms_output.put_line('precio antiguo: ' | | precioProduc);
+			
+			select precio into nuevoPrecio from producto;
+			dbms_output.put_line('precio Nuevo: ' | | nuevoPrecio);
+			
+		else
+		
+		if precioProduc between 500 and 1000 then
+			update producto set precioProduc = precioProduc + 20; 
+			dbms_output.put_line('precio antiguo: ' | | precioProduc);
+			dbms_output.put_line('precio Nuevo: ' | | nuevoPrecio);
+		else
+
+		if precioProduc > 1000 then
+			update producto set precioProduc = precioProduc + 25; 
+			dbms_output.put_line('precio antiguo: ' | | precioProduc);
+			dbms_output.put_line('precio Nuevo: ' | | nuevoPrecio);
+	else
+		
+		if precioProduc is null  then
+		update producto set precioProduc = precioProduc + 0; 
+			dbms_output.put_line('precio antiguo: ' | | precioProduc);
+			dbms_output.put_line('precio Nuevo: ' | | nuevoPrecio);
+		end if;
+end
+*/
+
+
+
+ EJERCICIO 3
+--------------------------------------
+
+create table cliente(rut varchar2(15) constraint rut_pk primary key,
+nombre varchar2(50) constraint nombre_nn not null,
+direccion varchar2(30) constraint direccion_nn not null,
+comuna varchar2(20) constraint comuna_nn not null,
+telefono int constraint tel_nn not null);
+
+begin
+	insert into cliente values('10114567','Antonio Vera','Ecuador 456','La Florida','6543234');
+	insert into cliente values('9867543','Jorge Pérez','Salamanca 486','La Florida','7654345');
+	insert into cliente values('8456567','Ana muñoz','San Francisco 77','Macul','8325678');
+	insert into cliente values('12345654','Ricardo Jerez','San Juan 44','La Florida','6753456');
+end;
+
+create table cuenta (numeroc int constraint numeroc_pk primary key,
+tipo varchar2(15) constraint tipo_nn not null,
+saldo number constraint saldo_chk check (saldo>0),
+rut varchar2(15),
+constraint rut_fk foreign key(rut) references cliente(rut));
+
+begin
+	insert into cuenta values('10111111','corriente',700000,'10114567');
+	insert into cuenta values('10123333','ahorro',545000,'8456567');
+	insert into cuenta values('10134444','corriente',890000,'9867543');
+	insert into cuenta values('10145555','ahorro',450000,'10114567');
+	insert into cuenta values('10157777','ahorro',370000,'12345654');
+end;
+
+create table cajero (codigoc int constraint codigoc_pk primary key,
+nombre varchar2(50) constraint nombrec_nn not null,
+direccion varchar2(30) constraint direccionc_nn not null,
+telefono int constraint telc_nn not null);
+
+begin 
+	insert into cajero values('10','Alejandro Cofre','Porto Seguro 88','5674343');
+	insert into cajero values('20','Mauricio Yañez','Los presidentes 345','6754323');
+	insert into cajero values('30','Alejandra Vera','Los Sauces 55','7654343');
+	insert into cajero values('40','Claudia Perez','Alpes 345','8643245');
+end;
+
+create table deposito(numerod int constraint numerod_pk primary key,
+cantidad number constraint cantidad_chk check (cantidad>0),
+numeroc int,
+codigoc int,
+constraint numeroc_fkd foreign key(numeroc) references cuenta(numeroc),
+constraint codigoc_fkd foreign key(codigoc) references cajero(codigoc));
+
+begin
+	insert into deposito values(10,54000,'10111111','30');
+	insert into deposito values(11,100000,'10123333','10');
+	insert into deposito values(12,75000,'10157777','30');
+	insert into deposito values(13,95000,'10123333','20');
+	insert into deposito values(14,20000,'10145555','40');
+end;
+
+Dada las tablas que está en el archivo Tablas Ejercicios que se encuentra en la Carpeta Laboratorio II, realizar los siguientes bloques:
+
+1. Crear un bloque PL/SQL que muestre la cantidad y promedio de los depósitos realizados por Jorge Pérez.
+----------------------------------------------------------------------------------------------------------------------------------------------
+declare
+	cantidadDeposito number(10);
+	promDeposito number(10);
+
+begin
+	select count(numerod), avg(cantidad)
+	into cantidadDeposito, promDeposito
+	from cliente join cuenta using(rut) join deposito using(numeroc)
+	where cliente.nombre = 'Jorge Pérez';
+	
+	if cantidadDeposito > 0 then
+		dbms_output.put_line('Respuesta 1 Ejercicio 3');
+		dbms_output.put_line('  ');
+		dbms_output.put_line('Cantidad de los depósitos realizados por Jorge Pérez: ' || cantidadDeposito);
+		dbms_output.put_line('Promedio de los depósitos realizados por Jorge Pérez: ' || promDeposito);
+	else
+		dbms_output.put_line('Respuesta 1 Ejercicio 3');
+		dbms_output.put_line('  ');
+		dbms_output.put_line('Jorge Pérez No Registra depositos');
+	end if;
+end
+
+2. Crear bloque PL/SQL que muestre el nombre del cajero que atendió al cliente Ana Muñoz.
+------------------------------------------------------------------------------------------------------------------------
+declare
+	nomCajero cajero.nombre%type;
+
+begin
+	select cajero.nombre  into nomCajero
+	from cliente  join cuenta using(rut) join deposito using(numeroc) join cajero using(codigoc)
+	where cliente.nombre = 'Ricardo Jerez';
+
+	dbms_output.put_line('Respuesta 2 Ejercicio 3');
+	dbms_output.put_line('  ');
+	dbms_output.put_line('Ricardo Jerez la anetendio la cajera: ' || nomCajero);
+end
+
+3. Crear un bloque PL/SQL que muestre el número, tipo y saldo de la cuenta de Ricardo Jerez.
+----------------------------------------------------------------------------------------------------------------------------
+declare
+	NumCuenta  number(10);
+	TipoCuenta  varchar2(20);
+	SaldoCuenta number(10);
+
+begin
+	select cuenta.numeroc, cuenta.tipo, cuenta.saldo 
+	into NumCuenta, TipoCuenta, SaldoCuenta
+	from cliente  join cuenta using(rut)
+	where cliente.nombre = 'Ricardo Jerez';
+
+	dbms_output.put_line('Respuesta 3 Ejercicio 3');
+	dbms_output.put_line('  ');
+	dbms_output.put_line('Cuenta de Ricardo Jerez');
+	dbms_output.put_line('Numero de Cuenta: ' || NumCuenta);
+	dbms_output.put_line('Tipo de Cuenta: ' || TipoCuenta);
+	dbms_output.put_line('Saldo de Cuenta: ' || SaldoCuenta);
+end
+
+4. Crear un bloque PL/SQL que muestre el promedio, número y tipo de cuenta de los depósitos hechos por Ana Muñoz.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+declare
+	promDeposito Number;
+	NumbCuenta Number;
+	TipoCuenta varchar2(20);
+
+begin
+	select avg(deposito.cantidad)
+	into promDeposito
+	from deposito join cuenta using(numeroc) join cliente using(rut)
+	where cliente.nombre = 'Ana muñoz';
+	
+	select cuenta.numeroc, cuenta.tipo 
+	into  NumbCuenta, TipoCuenta
+	from cliente  join cuenta using(rut)
+	where cliente.nombre = 'Ana muñoz';
+	
+	
+	dbms_output.put_line('Respuesta 4 Ejercicio 3');
+	dbms_output.put_line(' ');
+	dbms_output.put_line('Ana Muñoz');
+	dbms_output.put_line(' ');
+	dbms_output.put_line('Promedio: ' || promDeposito);
+	dbms_output.put_line('Numero de Deposito: ' || NumbCuenta);
+	dbms_output.put_line('Tipo de Cuenta: ' || TipoCuenta);
+end
+
+
+EJERCICIO IV
+Crear 10 bloques con enunciados utilizando las tablas del Ejercicio III, los bloques deben ser todos construidos con consultas multitablas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

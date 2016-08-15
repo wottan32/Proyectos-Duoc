@@ -1,0 +1,1103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ANULACION" EntityType="Model.Store.ANULACION" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="BENEFICIARIO_CREDITO" EntityType="Model.Store.BENEFICIARIO_CREDITO" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="COMBUSTIBLE" EntityType="Model.Store.COMBUSTIBLE" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="COMBUSTIBLESXSURTIDOR" EntityType="Model.Store.COMBUSTIBLESXSURTIDOR" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="EMPRESA" EntityType="Model.Store.EMPRESA" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="HISTORIAL_PRECIO" EntityType="Model.Store.HISTORIAL_PRECIO" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="PERMISO" EntityType="Model.Store.PERMISO" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="PERMISOSXROLES" EntityType="Model.Store.PERMISOSXROLES" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="ROL" EntityType="Model.Store.ROL" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="SURTIDOR" EntityType="Model.Store.SURTIDOR" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="TALONARIO" EntityType="Model.Store.TALONARIO" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="USUARIO" EntityType="Model.Store.USUARIO" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="VALE" EntityType="Model.Store.VALE" store:Type="Tables" Schema="TECNOBENCINA" />
+          <EntitySet Name="VENTA" EntityType="Model.Store.VENTA" store:Type="Tables" Schema="TECNOBENCINA" />
+          <AssociationSet Name="RELATIONSHIP13" Association="Model.Store.RELATIONSHIP13">
+            <End Role="TALONARIO" EntitySet="TALONARIO" />
+            <End Role="VALE" EntitySet="VALE" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP17" Association="Model.Store.RELATIONSHIP17">
+            <End Role="VALE" EntitySet="VALE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP19" Association="Model.Store.RELATIONSHIP19">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="TALONARIO" EntitySet="TALONARIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP2" Association="Model.Store.RELATIONSHIP2">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP20" Association="Model.Store.RELATIONSHIP20">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP21" Association="Model.Store.RELATIONSHIP21">
+            <End Role="PERMISO" EntitySet="PERMISO" />
+            <End Role="PERMISOSXROLES" EntitySet="PERMISOSXROLES" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP22" Association="Model.Store.RELATIONSHIP22">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="PERMISOSXROLES" EntitySet="PERMISOSXROLES" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP23" Association="Model.Store.RELATIONSHIP23">
+            <End Role="BENEFICIARIO_CREDITO" EntitySet="BENEFICIARIO_CREDITO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP24" Association="Model.Store.RELATIONSHIP24">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP29" Association="Model.Store.RELATIONSHIP29">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="HISTORIAL_PRECIO" EntitySet="HISTORIAL_PRECIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP3" Association="Model.Store.RELATIONSHIP3">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP31" Association="Model.Store.RELATIONSHIP31">
+            <End Role="ANULACION" EntitySet="ANULACION" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP33" Association="Model.Store.RELATIONSHIP33">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ANULACION" EntitySet="ANULACION" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP5" Association="Model.Store.RELATIONSHIP5">
+            <End Role="SURTIDOR" EntitySet="SURTIDOR" />
+            <End Role="COMBUSTIBLESXSURTIDOR" EntitySet="COMBUSTIBLESXSURTIDOR" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP6" Association="Model.Store.RELATIONSHIP6">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="COMBUSTIBLESXSURTIDOR" EntitySet="COMBUSTIBLESXSURTIDOR" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP7" Association="Model.Store.RELATIONSHIP7">
+            <End Role="SURTIDOR" EntitySet="SURTIDOR" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ANULACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="USUARIO_RUT" Type="number" Nullable="false" />
+          <Property Name="RAZON" Type="varchar2" Nullable="false" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="BENEFICIARIO_CREDITO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="RUT" Type="number" Nullable="false" />
+          <Property Name="TOPE_LITROS" Type="number" Nullable="false" />
+          <Property Name="LIMITE_VIGENCIA" Type="date" Nullable="false" />
+          <Property Name="NOMBRE_EMPRESA" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DV" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="COMBUSTIBLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="COMBUSTIBLESXSURTIDOR">
+          <Key>
+            <PropertyRef Name="COMBUSTIBLE_ID" />
+            <PropertyRef Name="SURTIDOR_ID" />
+          </Key>
+          <Property Name="COMBUSTIBLE_ID" Type="number" Nullable="false" />
+          <Property Name="SURTIDOR_ID" Type="number" Nullable="false" />
+          <Property Name="CANTIDAD_LITROS" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="number" Nullable="false" />
+          <Property Name="DV" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="RUT_USUARIO" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_PRECIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="PRECIO" Type="number" Nullable="false" />
+          <Property Name="COMBUSTIBLE_ID" Type="number" />
+        </EntityType>
+        <EntityType Name="PERMISO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PERMISOSXROLES">
+          <Key>
+            <PropertyRef Name="PEMISO_ID" />
+            <PropertyRef Name="ROL_ID" />
+          </Key>
+          <Property Name="PEMISO_ID" Type="number" Nullable="false" />
+          <Property Name="ROL_ID" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SURTIDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TALONARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="FECHA_ENTRGA" Type="date" Nullable="false" />
+          <Property Name="NUMERO_COMPROBANTE_TRANSACCION" Type="number" Nullable="false" />
+          <Property Name="EMPRESA_RUT" Type="number" Nullable="false" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="number" Nullable="false" />
+          <Property Name="DV" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="NOMBRES" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="APATERNO" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="AMATERNO" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="PASSWORD" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ROL_ID" Type="number" />
+        </EntityType>
+        <EntityType Name="VALE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TALONARIO_ID" Type="number" Nullable="false" />
+          <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CANTIDAD_LITROS" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="COMBUSTIBLE_ID" Type="number" Nullable="false" />
+          <Property Name="MONTO" Type="number" Nullable="false" />
+          <Property Name="LITROS" Type="number" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="USUARIO_RUT" Type="number" Nullable="false" />
+          <Property Name="SURTIDOR_ID" Type="number" Nullable="false" />
+          <Property Name="VALE_ID" Type="number" />
+          <Property Name="ANULACION_ID" Type="number" />
+          <Property Name="BENEFICIARIO_ID" Type="number" />
+        </EntityType>
+        <Association Name="RELATIONSHIP13">
+          <End Role="TALONARIO" Type="Model.Store.TALONARIO" Multiplicity="1" />
+          <End Role="VALE" Type="Model.Store.VALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TALONARIO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VALE">
+              <PropertyRef Name="TALONARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP17">
+          <End Role="VALE" Type="Model.Store.VALE" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VALE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="VALE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP19">
+          <End Role="EMPRESA" Type="Model.Store.EMPRESA" Multiplicity="1" />
+          <End Role="TALONARIO" Type="Model.Store.TALONARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="TALONARIO">
+              <PropertyRef Name="EMPRESA_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP2">
+          <End Role="COMBUSTIBLE" Type="Model.Store.COMBUSTIBLE" Multiplicity="1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP20">
+          <End Role="ROL" Type="Model.Store.ROL" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Model.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP21">
+          <End Role="PERMISO" Type="Model.Store.PERMISO" Multiplicity="1" />
+          <End Role="PERMISOSXROLES" Type="Model.Store.PERMISOSXROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERMISO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERMISOSXROLES">
+              <PropertyRef Name="PEMISO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP22">
+          <End Role="ROL" Type="Model.Store.ROL" Multiplicity="1" />
+          <End Role="PERMISOSXROLES" Type="Model.Store.PERMISOSXROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERMISOSXROLES">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP23">
+          <End Role="BENEFICIARIO_CREDITO" Type="Model.Store.BENEFICIARIO_CREDITO" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENEFICIARIO_CREDITO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="BENEFICIARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP24">
+          <End Role="USUARIO" Type="Model.Store.USUARIO" Multiplicity="1" />
+          <End Role="EMPRESA" Type="Model.Store.EMPRESA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="EMPRESA">
+              <PropertyRef Name="RUT_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP29">
+          <End Role="COMBUSTIBLE" Type="Model.Store.COMBUSTIBLE" Multiplicity="0..1" />
+          <End Role="HISTORIAL_PRECIO" Type="Model.Store.HISTORIAL_PRECIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HISTORIAL_PRECIO">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP3">
+          <End Role="USUARIO" Type="Model.Store.USUARIO" Multiplicity="1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP31">
+          <End Role="ANULACION" Type="Model.Store.ANULACION" Multiplicity="0..1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANULACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ANULACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP33">
+          <End Role="USUARIO" Type="Model.Store.USUARIO" Multiplicity="1" />
+          <End Role="ANULACION" Type="Model.Store.ANULACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ANULACION">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP5">
+          <End Role="SURTIDOR" Type="Model.Store.SURTIDOR" Multiplicity="1" />
+          <End Role="COMBUSTIBLESXSURTIDOR" Type="Model.Store.COMBUSTIBLESXSURTIDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SURTIDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COMBUSTIBLESXSURTIDOR">
+              <PropertyRef Name="SURTIDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP6">
+          <End Role="COMBUSTIBLE" Type="Model.Store.COMBUSTIBLE" Multiplicity="1" />
+          <End Role="COMBUSTIBLESXSURTIDOR" Type="Model.Store.COMBUSTIBLESXSURTIDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COMBUSTIBLESXSURTIDOR">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP7">
+          <End Role="SURTIDOR" Type="Model.Store.SURTIDOR" Multiplicity="1" />
+          <End Role="VENTA" Type="Model.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SURTIDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="SURTIDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PKG_TECNOBENCINA_HASPERMISSION" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="PKG_TECNOBENCINA.HASPERMISSION" Schema="TECNOBENCINA">
+          <Parameter Name="IRUT" Type="number" Mode="In" />
+          <Parameter Name="IPERMISO" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="PKG_TECNOBENCINA_HASROLE" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="PKG_TECNOBENCINA.HASROLE" Schema="TECNOBENCINA">
+          <Parameter Name="IRUT" Type="number" Mode="In" />
+          <Parameter Name="IROL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="PKG_TECNOBENCINA_LITROSMESPORBENEFICIARIO" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="PKG_TECNOBENCINA.LITROSMESPORBENEFICIARIO" Schema="TECNOBENCINA">
+          <Parameter Name="IIDBENEFICIARIO" Type="number" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TecnoBencinaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANULACION" EntityType="Model.ANULACION" />
+          <EntitySet Name="BENEFICIARIO_CREDITO" EntityType="Model.BENEFICIARIO_CREDITO" />
+          <EntitySet Name="COMBUSTIBLE" EntityType="Model.COMBUSTIBLE" />
+          <EntitySet Name="COMBUSTIBLESXSURTIDOR" EntityType="Model.COMBUSTIBLESXSURTIDOR" />
+          <EntitySet Name="EMPRESA" EntityType="Model.EMPRESA" />
+          <EntitySet Name="HISTORIAL_PRECIO" EntityType="Model.HISTORIAL_PRECIO" />
+          <EntitySet Name="PERMISO" EntityType="Model.PERMISO" />
+          <EntitySet Name="ROL" EntityType="Model.ROL" />
+          <EntitySet Name="SURTIDOR" EntityType="Model.SURTIDOR" />
+          <EntitySet Name="TALONARIO" EntityType="Model.TALONARIO" />
+          <EntitySet Name="USUARIO" EntityType="Model.USUARIO" />
+          <EntitySet Name="VALE" EntityType="Model.VALE" />
+          <EntitySet Name="VENTA" EntityType="Model.VENTA" />
+          <AssociationSet Name="RELATIONSHIP31" Association="Model.RELATIONSHIP31">
+            <End Role="ANULACION" EntitySet="ANULACION" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP33" Association="Model.RELATIONSHIP33">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ANULACION" EntitySet="ANULACION" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP23" Association="Model.RELATIONSHIP23">
+            <End Role="BENEFICIARIO_CREDITO" EntitySet="BENEFICIARIO_CREDITO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP2" Association="Model.RELATIONSHIP2">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP29" Association="Model.RELATIONSHIP29">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="HISTORIAL_PRECIO" EntitySet="HISTORIAL_PRECIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP6" Association="Model.RELATIONSHIP6">
+            <End Role="COMBUSTIBLE" EntitySet="COMBUSTIBLE" />
+            <End Role="COMBUSTIBLESXSURTIDOR" EntitySet="COMBUSTIBLESXSURTIDOR" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP5" Association="Model.RELATIONSHIP5">
+            <End Role="SURTIDOR" EntitySet="SURTIDOR" />
+            <End Role="COMBUSTIBLESXSURTIDOR" EntitySet="COMBUSTIBLESXSURTIDOR" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP19" Association="Model.RELATIONSHIP19">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="TALONARIO" EntitySet="TALONARIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP24" Association="Model.RELATIONSHIP24">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP20" Association="Model.RELATIONSHIP20">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP7" Association="Model.RELATIONSHIP7">
+            <End Role="SURTIDOR" EntitySet="SURTIDOR" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP13" Association="Model.RELATIONSHIP13">
+            <End Role="TALONARIO" EntitySet="TALONARIO" />
+            <End Role="VALE" EntitySet="VALE" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP3" Association="Model.RELATIONSHIP3">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="RELATIONSHIP17" Association="Model.RELATIONSHIP17">
+            <End Role="VALE" EntitySet="VALE" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="PERMISOSXROLES" Association="Model.PERMISOSXROLES">
+            <End Role="PERMISO" EntitySet="PERMISO" />
+            <End Role="ROL" EntitySet="ROL" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ANULACION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="USUARIO_RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="RAZON" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP31" FromRole="ANULACION" ToRole="VENTA" />
+          <NavigationProperty Name="USUARIO" Relationship="Model.RELATIONSHIP33" FromRole="ANULACION" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="BENEFICIARIO_CREDITO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TOPE_LITROS" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="LIMITE_VIGENCIA" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_EMPRESA" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DV" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP23" FromRole="BENEFICIARIO_CREDITO" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="COMBUSTIBLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP2" FromRole="COMBUSTIBLE" ToRole="VENTA" />
+          <NavigationProperty Name="HISTORIAL_PRECIO" Relationship="Model.RELATIONSHIP29" FromRole="COMBUSTIBLE" ToRole="HISTORIAL_PRECIO" />
+          <NavigationProperty Name="COMBUSTIBLESXSURTIDOR" Relationship="Model.RELATIONSHIP6" FromRole="COMBUSTIBLE" ToRole="COMBUSTIBLESXSURTIDOR" />
+        </EntityType>
+        <EntityType Name="COMBUSTIBLESXSURTIDOR">
+          <Key>
+            <PropertyRef Name="COMBUSTIBLE_ID" />
+            <PropertyRef Name="SURTIDOR_ID" />
+          </Key>
+          <Property Type="Decimal" Name="COMBUSTIBLE_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SURTIDOR_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CANTIDAD_LITROS" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="COMBUSTIBLE" Relationship="Model.RELATIONSHIP6" FromRole="COMBUSTIBLESXSURTIDOR" ToRole="COMBUSTIBLE" />
+          <NavigationProperty Name="SURTIDOR" Relationship="Model.RELATIONSHIP5" FromRole="COMBUSTIBLESXSURTIDOR" ToRole="SURTIDOR" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Type="Decimal" Name="RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="DV" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="RUT_USUARIO" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="TALONARIO" Relationship="Model.RELATIONSHIP19" FromRole="EMPRESA" ToRole="TALONARIO" />
+          <NavigationProperty Name="USUARIO" Relationship="Model.RELATIONSHIP24" FromRole="EMPRESA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_PRECIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="FECHA" Nullable="false" />
+          <Property Type="Decimal" Name="PRECIO" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="COMBUSTIBLE_ID" Precision="38" Scale="0" />
+          <NavigationProperty Name="COMBUSTIBLE" Relationship="Model.RELATIONSHIP29" FromRole="HISTORIAL_PRECIO" ToRole="COMBUSTIBLE" />
+        </EntityType>
+        <EntityType Name="PERMISO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ROL" Relationship="Model.PERMISOSXROLES" FromRole="PERMISO" ToRole="ROL" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Model.RELATIONSHIP20" FromRole="ROL" ToRole="USUARIO" />
+          <NavigationProperty Name="PERMISO" Relationship="Model.PERMISOSXROLES" FromRole="ROL" ToRole="PERMISO" />
+        </EntityType>
+        <EntityType Name="SURTIDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="COMBUSTIBLESXSURTIDOR" Relationship="Model.RELATIONSHIP5" FromRole="SURTIDOR" ToRole="COMBUSTIBLESXSURTIDOR" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP7" FromRole="SURTIDOR" ToRole="VENTA" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TALONARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="FECHA_ENTRGA" Nullable="false" />
+          <Property Type="Decimal" Name="NUMERO_COMPROBANTE_TRANSACCION" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="EMPRESA_RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="Model.RELATIONSHIP19" FromRole="TALONARIO" ToRole="EMPRESA" />
+          <NavigationProperty Name="VALE" Relationship="Model.RELATIONSHIP13" FromRole="TALONARIO" ToRole="VALE" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Type="Decimal" Name="RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="DV" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="APATERNO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AMATERNO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PASSWORD" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="ROL_ID" Precision="38" Scale="0" />
+          <NavigationProperty Name="ANULACION" Relationship="Model.RELATIONSHIP33" FromRole="USUARIO" ToRole="ANULACION" />
+          <NavigationProperty Name="EMPRESA" Relationship="Model.RELATIONSHIP24" FromRole="USUARIO" ToRole="EMPRESA" />
+          <NavigationProperty Name="ROL" Relationship="Model.RELATIONSHIP20" FromRole="USUARIO" ToRole="ROL" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP3" FromRole="USUARIO" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="VALE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TALONARIO_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="CANTIDAD_LITROS" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="TALONARIO" Relationship="Model.RELATIONSHIP13" FromRole="VALE" ToRole="TALONARIO" />
+          <NavigationProperty Name="VENTA" Relationship="Model.RELATIONSHIP17" FromRole="VALE" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="COMBUSTIBLE_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="MONTO" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="LITROS" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="FECHA" Nullable="false" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="USUARIO_RUT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SURTIDOR_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="VALE_ID" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ANULACION_ID" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="BENEFICIARIO_ID" Precision="38" Scale="0" />
+          <NavigationProperty Name="ANULACION" Relationship="Model.RELATIONSHIP31" FromRole="VENTA" ToRole="ANULACION" />
+          <NavigationProperty Name="BENEFICIARIO_CREDITO" Relationship="Model.RELATIONSHIP23" FromRole="VENTA" ToRole="BENEFICIARIO_CREDITO" />
+          <NavigationProperty Name="COMBUSTIBLE" Relationship="Model.RELATIONSHIP2" FromRole="VENTA" ToRole="COMBUSTIBLE" />
+          <NavigationProperty Name="SURTIDOR" Relationship="Model.RELATIONSHIP7" FromRole="VENTA" ToRole="SURTIDOR" />
+          <NavigationProperty Name="USUARIO" Relationship="Model.RELATIONSHIP3" FromRole="VENTA" ToRole="USUARIO" />
+          <NavigationProperty Name="VALE" Relationship="Model.RELATIONSHIP17" FromRole="VENTA" ToRole="VALE" />
+        </EntityType>
+        <Association Name="RELATIONSHIP31">
+          <End Type="Model.ANULACION" Role="ANULACION" Multiplicity="0..1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANULACION">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="ANULACION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP33">
+          <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="Model.ANULACION" Role="ANULACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="ANULACION">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP23">
+          <End Type="Model.BENEFICIARIO_CREDITO" Role="BENEFICIARIO_CREDITO" Multiplicity="0..1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BENEFICIARIO_CREDITO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="BENEFICIARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP2">
+          <End Type="Model.COMBUSTIBLE" Role="COMBUSTIBLE" Multiplicity="1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP29">
+          <End Type="Model.COMBUSTIBLE" Role="COMBUSTIBLE" Multiplicity="0..1" />
+          <End Type="Model.HISTORIAL_PRECIO" Role="HISTORIAL_PRECIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HISTORIAL_PRECIO">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP6">
+          <End Type="Model.COMBUSTIBLE" Role="COMBUSTIBLE" Multiplicity="1" />
+          <End Type="Model.COMBUSTIBLESXSURTIDOR" Role="COMBUSTIBLESXSURTIDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMBUSTIBLE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COMBUSTIBLESXSURTIDOR">
+              <PropertyRef Name="COMBUSTIBLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP5">
+          <End Type="Model.SURTIDOR" Role="SURTIDOR" Multiplicity="1" />
+          <End Type="Model.COMBUSTIBLESXSURTIDOR" Role="COMBUSTIBLESXSURTIDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SURTIDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="COMBUSTIBLESXSURTIDOR">
+              <PropertyRef Name="SURTIDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP19">
+          <End Type="Model.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="Model.TALONARIO" Role="TALONARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="TALONARIO">
+              <PropertyRef Name="EMPRESA_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP24">
+          <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="Model.EMPRESA" Role="EMPRESA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="EMPRESA">
+              <PropertyRef Name="RUT_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP20">
+          <End Type="Model.ROL" Role="ROL" Multiplicity="0..1" />
+          <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ROL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP7">
+          <End Type="Model.SURTIDOR" Role="SURTIDOR" Multiplicity="1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SURTIDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="SURTIDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP13">
+          <End Type="Model.TALONARIO" Role="TALONARIO" Multiplicity="1" />
+          <End Type="Model.VALE" Role="VALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TALONARIO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VALE">
+              <PropertyRef Name="TALONARIO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP3">
+          <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RELATIONSHIP17">
+          <End Type="Model.VALE" Role="VALE" Multiplicity="0..1" />
+          <End Type="Model.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VALE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="VALE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PERMISOSXROLES">
+          <End Type="Model.PERMISO" Role="PERMISO" Multiplicity="*" />
+          <End Type="Model.ROL" Role="ROL" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="TecnoBencinaEntities">
+          <EntitySetMapping Name="ANULACION">
+            <EntityTypeMapping TypeName="Model.ANULACION">
+              <MappingFragment StoreEntitySet="ANULACION">
+                <ScalarProperty Name="RAZON" ColumnName="RAZON" />
+                <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BENEFICIARIO_CREDITO">
+            <EntityTypeMapping TypeName="Model.BENEFICIARIO_CREDITO">
+              <MappingFragment StoreEntitySet="BENEFICIARIO_CREDITO">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="DV" ColumnName="DV" />
+                <ScalarProperty Name="NOMBRE_EMPRESA" ColumnName="NOMBRE_EMPRESA" />
+                <ScalarProperty Name="LIMITE_VIGENCIA" ColumnName="LIMITE_VIGENCIA" />
+                <ScalarProperty Name="TOPE_LITROS" ColumnName="TOPE_LITROS" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMBUSTIBLE">
+            <EntityTypeMapping TypeName="Model.COMBUSTIBLE">
+              <MappingFragment StoreEntitySet="COMBUSTIBLE">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMBUSTIBLESXSURTIDOR">
+            <EntityTypeMapping TypeName="Model.COMBUSTIBLESXSURTIDOR">
+              <MappingFragment StoreEntitySet="COMBUSTIBLESXSURTIDOR">
+                <ScalarProperty Name="CANTIDAD_LITROS" ColumnName="CANTIDAD_LITROS" />
+                <ScalarProperty Name="SURTIDOR_ID" ColumnName="SURTIDOR_ID" />
+                <ScalarProperty Name="COMBUSTIBLE_ID" ColumnName="COMBUSTIBLE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPRESA">
+            <EntityTypeMapping TypeName="Model.EMPRESA">
+              <MappingFragment StoreEntitySet="EMPRESA">
+                <ScalarProperty Name="RUT_USUARIO" ColumnName="RUT_USUARIO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DV" ColumnName="DV" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIAL_PRECIO">
+            <EntityTypeMapping TypeName="Model.HISTORIAL_PRECIO">
+              <MappingFragment StoreEntitySet="HISTORIAL_PRECIO">
+                <ScalarProperty Name="COMBUSTIBLE_ID" ColumnName="COMBUSTIBLE_ID" />
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERMISO">
+            <EntityTypeMapping TypeName="Model.PERMISO">
+              <MappingFragment StoreEntitySet="PERMISO">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROL">
+            <EntityTypeMapping TypeName="Model.ROL">
+              <MappingFragment StoreEntitySet="ROL">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SURTIDOR">
+            <EntityTypeMapping TypeName="Model.SURTIDOR">
+              <MappingFragment StoreEntitySet="SURTIDOR">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TALONARIO">
+            <EntityTypeMapping TypeName="Model.TALONARIO">
+              <MappingFragment StoreEntitySet="TALONARIO">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="EMPRESA_RUT" ColumnName="EMPRESA_RUT" />
+                <ScalarProperty Name="NUMERO_COMPROBANTE_TRANSACCION" ColumnName="NUMERO_COMPROBANTE_TRANSACCION" />
+                <ScalarProperty Name="FECHA_ENTRGA" ColumnName="FECHA_ENTRGA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="Model.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="ROL_ID" ColumnName="ROL_ID" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="AMATERNO" ColumnName="AMATERNO" />
+                <ScalarProperty Name="APATERNO" ColumnName="APATERNO" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="DV" ColumnName="DV" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VALE">
+            <EntityTypeMapping TypeName="Model.VALE">
+              <MappingFragment StoreEntitySet="VALE">
+                <ScalarProperty Name="CANTIDAD_LITROS" ColumnName="CANTIDAD_LITROS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="TALONARIO_ID" ColumnName="TALONARIO_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENTA">
+            <EntityTypeMapping TypeName="Model.VENTA">
+              <MappingFragment StoreEntitySet="VENTA">
+                <ScalarProperty Name="BENEFICIARIO_ID" ColumnName="BENEFICIARIO_ID" />
+                <ScalarProperty Name="ANULACION_ID" ColumnName="ANULACION_ID" />
+                <ScalarProperty Name="VALE_ID" ColumnName="VALE_ID" />
+                <ScalarProperty Name="SURTIDOR_ID" ColumnName="SURTIDOR_ID" />
+                <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="LITROS" ColumnName="LITROS" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="COMBUSTIBLE_ID" ColumnName="COMBUSTIBLE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PERMISOSXROLES" TypeName="Model.PERMISOSXROLES" StoreEntitySet="PERMISOSXROLES">
+            <EndProperty Name="ROL">
+              <ScalarProperty Name="ID" ColumnName="ROL_ID" />
+            </EndProperty>
+            <EndProperty Name="PERMISO">
+              <ScalarProperty Name="ID" ColumnName="PEMISO_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TecnoBencinaEDM" ZoomLevel="52">
+        <EntityTypeShape EntityType="Model.ANULACION" Width="1.5" PointX="3.75" PointY="11.625" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Model.BENEFICIARIO_CREDITO" Width="1.5" PointX="3.75" PointY="15" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="Model.COMBUSTIBLE" Width="1.5" PointX="0.75" PointY="5.125" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="Model.COMBUSTIBLESXSURTIDOR" Width="1.5" PointX="3" PointY="5.25" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="1.5" PointY="25.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Model.HISTORIAL_PRECIO" Width="1.5" PointX="3" PointY="7.875" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Model.PERMISO" Width="1.5" PointX="1.5" PointY="18.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="Model.ROL" Width="1.5" PointX="1.5" PointY="15.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Model.SURTIDOR" Width="1.5" PointX="3.75" PointY="18.25" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="Model.TALONARIO" Width="1.5" PointX="1.5" PointY="21.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="1.5" PointY="10.875" Height="3.326396484374996" />
+        <EntityTypeShape EntityType="Model.VALE" Width="1.5" PointX="3.75" PointY="21.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="Model.VENTA" Width="1.5" PointX="6" PointY="4" Height="4.2879036458333246" />
+        <AssociationConnector Association="Model.RELATIONSHIP31" >
+          <ConnectorPoint PointX="4.90625" PointY="11.625" />
+          <ConnectorPoint PointX="4.90625" PointY="4.59375" />
+          <ConnectorPoint PointX="6" PointY="4.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP33" >
+          <ConnectorPoint PointX="3" PointY="12.615143229166669" />
+          <ConnectorPoint PointX="3.75" PointY="12.615143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP23" >
+          <ConnectorPoint PointX="5.25" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="6.2604141666666671" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="6.4270808333333331" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="6.75" PointY="16.278595377604169" />
+          <ConnectorPoint PointX="6.75" PointY="8.2879036458333246" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP2" >
+          <ConnectorPoint PointX="2.25" PointY="5.15625" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="5.1562499999999991" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="5.15625" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="5.1562499999999991" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="5.15625" />
+          <ConnectorPoint PointX="6" PointY="5.15625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP29" >
+          <ConnectorPoint PointX="1.5" PointY="7.2975878906250031" />
+          <ConnectorPoint PointX="1.5" PointY="8.86514322916667" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="8.86514322916667" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="8.86514322916667" />
+          <ConnectorPoint PointX="3" PointY="8.86514322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP6" >
+          <ConnectorPoint PointX="2.25" PointY="6.2401432291666694" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.2401432291666685" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.2401432291666694" />
+          <ConnectorPoint PointX="3" PointY="6.2401432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP5" >
+          <ConnectorPoint PointX="5.25" PointY="18.251152846153843" />
+          <ConnectorPoint PointX="5.625" PointY="17.876152846153843" />
+          <ConnectorPoint PointX="5.625" PointY="7.6052864583333388" />
+          <ConnectorPoint PointX="4.875" PointY="7.6052864583333388" />
+          <ConnectorPoint PointX="4.5" PointY="7.2302864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP19" >
+          <ConnectorPoint PointX="2.25" PointY="25.625" />
+          <ConnectorPoint PointX="2.25" PointY="23.989889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP24" >
+          <ConnectorPoint PointX="2.9999999999999996" PointY="14.201396484374996" />
+          <ConnectorPoint PointX="3.375" PointY="14.576396484374996" />
+          <ConnectorPoint PointX="3.375" PointY="25.251152846153843" />
+          <ConnectorPoint PointX="3" PointY="25.626152846153843" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP20" >
+          <ConnectorPoint PointX="2.2187474999999997" PointY="15.625" />
+          <ConnectorPoint PointX="2.2187474999999997" PointY="14.201396484374996" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP7" >
+          <ConnectorPoint PointX="5.25" PointY="19.079670719951928" />
+          <ConnectorPoint PointX="6.3437475" PointY="19.079670719951928" />
+          <ConnectorPoint PointX="6.3437475" PointY="8.2879036458333246" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP13" >
+          <ConnectorPoint PointX="3" PointY="22.836293945312505" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="22.836293945312505" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="22.836293945312505" />
+          <ConnectorPoint PointX="3.75" PointY="22.836293945312505" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP3" >
+          <ConnectorPoint PointX="2.625" PointY="10.875" />
+          <ConnectorPoint PointX="2.625" PointY="4.2656225000000063" />
+          <ConnectorPoint PointX="6" PointY="4.2656225000000063" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.RELATIONSHIP17" >
+          <ConnectorPoint PointX="5.25" PointY="22.836293945312505" />
+          <ConnectorPoint PointX="7.1562525" PointY="22.836293945312505" />
+          <ConnectorPoint PointX="7.1562525" PointY="8.2879036458333246" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.PERMISOSXROLES" >
+          <ConnectorPoint PointX="2.25" PointY="18.75" />
+          <ConnectorPoint PointX="2.25" PointY="17.412985026041667" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

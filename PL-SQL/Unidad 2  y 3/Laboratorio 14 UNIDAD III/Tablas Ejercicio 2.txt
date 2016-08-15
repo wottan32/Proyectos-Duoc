@@ -1,0 +1,11 @@
+create table departamento (cod_dep varchar2(10) primary key,nombre varchar2(60))
+
+create table empleados (rut varchar2(15) primary key,cargo varchar2(40),sueldo number,departamento varchar2(10), constraint dep_fk foreign key(departamento) references departamento(cod_dep));
+
+begin
+insert into departamento values('001','Informatica');
+insert into departamento values('002','Contabilidad');
+insert into empleados values('18596942-8','Analista',600000,'001');
+insert into empleados values('18599222-8','Contador',400000,'002');
+insert into empleados values('12596942-8','Analista',500000,'001');
+end;
