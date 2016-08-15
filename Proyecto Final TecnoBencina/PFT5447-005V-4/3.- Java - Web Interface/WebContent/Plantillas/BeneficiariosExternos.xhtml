@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<p:panel header="Beneficiarios externos">
+<h:form>
+    <p:fileUpload fileUploadListener="#{controlBeneficiarios.CargarNuevosBeneficiarios}" mode="advanced"
+                     update="messages :dlgBen" /> 
+    <p:growl id="messages" showDetail="true" />
+</h:form>
+<h:form id="lstBenef">
+<p:dataTable value="#{controlBeneficiarios.listaBeneficiarios}" var="ben" scrollable="true" scrollHeight="200">
+	<p:column headerText="Rut beneficiario">
+		<p:outputLabel value="#{ben.oBeneficiario.rut}-#{ben.oBeneficiario.dv}" />
+	</p:column>
+	<p:column headerText="Empresa">
+		<p:outputLabel value="#{ben.oBeneficiario.nombreEmpresa}"/>		
+	</p:column>
+	<p:column headerText="Limite Vegencia">
+		<p:outputLabel value="#{ben.fecha}"/>
+	</p:column>
+	<p:column headerText="Tope Litros">
+		<p:outputPanel velue="#{ben.oBeneficiario.topeLitros}"/>
+	</p:column>
+	<p:column headerText="Estado">
+		<p:selectBooleanButton id="value2" value="#{ben.oBeneficiario.estado}" disabled="#{not ben.editable}" onLabel="Activo" offLabel="Inactivo" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:35px" />
+	</p:column>
+
+	<p:column headerText="accion">
+	 	<p:commandLink value="Editar" action="#{controlBeneficiarios.AccionEditar(ben)}" update="lstBenef" />
+	 </p:column>
+	
+</p:dataTable>
+<p:commandButton value="Actualizar" actionListener="#{controlBeneficiarios.EditarBeneficiario()}" update="lstBenef"/>
+
+</h:form>
+</p:panel>
+<h:form id="dlgBen">           
+ 
+    <p:dialog header="Beneficiarios Cargados" widgetVar="dlgBen" width="800px" height="230px">
+        <p:dataTable value="#{controlBeneficiarios.listaNuevaBeneficiarios}" scrollable="True" var="bn" scrollHeight="200" rowStyleClass="#{bn.creado ? 'highlight1' : 'highlight2'}">
+        	<p:column headerText="Rut">
+        		<p:outputLabel value="#{bn.ben.rut}-#{bn.ben.dv}" />         	
+        	</p:column>
+        	<p:column headerText="Nombre Empresa">
+        		<p:outputLabel value="#{bn.ben.nombreEmpresa}" />         	
+        	</p:column>
+        	<p:column headerText="Vegencia">
+        		<p:outputLabel value="#{bn.fecha}" />         	
+        	</p:column>
+        	<p:column headerText="Tope de Litros">
+        		<p:outputPanel value="#{bn.ben.topeLitros}"  />
+        	</p:column>
+        </p:dataTable>
+    </p:dialog>
+ 
+</h:form>
+</body> 
+</html>

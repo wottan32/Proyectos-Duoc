@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#LoginUser.xhtml" PATH="/LoginUser.xhtml"
+  SHAPE="182,146,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#LoginUser.xhtml:0" NAME="item"
+   PATH="/LoginUser.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Index.xhtml" PATH="/Index.xhtml"
+  SHAPE="432,168,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Index.xhtml:0" NAME="item"
+   PATH="/Index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="FaceMantenedorUsuario::#FaceMantenedorUsuario.xhtml"
+    NAME="output" PATH="/FaceMantenedorUsuario.xhtml"
+    SHAPE="481,200,744,200,744,248,831,248"
+    TARGET="rules:#FaceMantenedorUsuario.xhtml"
+    TITLE="FaceMantenedorUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="LoginUser::#LoginUser.xhtml" NAME="output1"
+    PATH="/LoginUser.xhtml" TARGET="rules:#LoginUser.xhtml"
+    TITLE="LoginUser" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="FaceMantenedorEmpresa::#FaceMantenedorEmpresa.xhtml"
+    NAME="output2" PATH="/FaceMantenedorEmpresa.xhtml"
+    TARGET="rules:#FaceMantenedorEmpresa.xhtml"
+    TITLE="FaceMantenedorEmpresa" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="FaceMantenedorCombustible::#FaceMantenedorCombustible.xhtml"
+    NAME="output3" PATH="/FaceMantenedorCombustible.xhtml"
+    SHAPE="481,248,672,248,672,96,703,96"
+    TARGET="rules:#FaceMantenedorCombustible.xhtml"
+    TITLE="FaceMantenedorCombustible" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="FaceMantenedorTalonarios::#FaceMantenedorTalonarios.xhtml"
+    NAME="output4" PATH="/FaceMantenedorTalonarios.xhtml"
+    TARGET="rules:#FaceMantenedorTalonarios.xhtml"
+    TITLE="FaceMantenedorTalonarios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="FaceInformeVenta::#FaceInformeVenta.xhtml"
+    NAME="output5" PATH="/FaceInformeVenta.xhtml"
+    TARGET="rules:#FaceInformeVenta.xhtml" TITLE="FaceInformeVenta" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="FaceMantenedorBeneficiario::#FaceMantenedorBeneficiario.xhtml"
+    NAME="output6" PATH="/FaceMantenedorBeneficiario.xhtml"
+    TARGET="rules:#FaceMantenedorBeneficiario.xhtml"
+    TITLE="FaceMantenedorBeneficiario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceMantenedorUsuario.xhtml"
+  PATH="/FaceMantenedorUsuario.xhtml" SHAPE="832,240,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceMantenedorUsuario.xhtml:0" NAME="item"
+   PATH="/FaceMantenedorUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceMantenedorEmpresa.xhtml"
+  PATH="/FaceMantenedorEmpresa.xhtml" SHAPE="455,85,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceMantenedorEmpresa.xhtml:0" NAME="item"
+   PATH="/FaceMantenedorEmpresa.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceMantenedorCombustible.xhtml"
+  PATH="/FaceMantenedorCombustible.xhtml" SHAPE="704,88,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceMantenedorCombustible.xhtml:0"
+   NAME="item" PATH="/FaceMantenedorCombustible.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceMantenedorTalonarios.xhtml"
+  PATH="/FaceMantenedorTalonarios.xhtml" SHAPE="485,375,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceMantenedorTalonarios.xhtml:0" NAME="item"
+   PATH="/FaceMantenedorTalonarios.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceInformeVenta.xhtml"
+  PATH="/FaceInformeVenta.xhtml" SHAPE="738,349,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceInformeVenta.xhtml:0" NAME="item"
+   PATH="/FaceInformeVenta.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#FaceMantenedorBeneficiario.xhtml"
+  PATH="/FaceMantenedorBeneficiario.xhtml" SHAPE="281,361,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#FaceMantenedorBeneficiario.xhtml:0"
+   NAME="item" PATH="/FaceMantenedorBeneficiario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Index::#Index.xhtml" NAME="output"
+    PATH="/Index.xhtml" TARGET="rules:#Index.xhtml" TITLE="Index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

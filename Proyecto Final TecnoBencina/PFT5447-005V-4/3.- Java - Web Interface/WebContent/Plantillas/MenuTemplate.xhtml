@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" > 
+
+
+<h:head>
+<script type="text/javascript">
+   //<![CDATA[   
+     function logout(xhr, status, args) {
+     setTimeout(function() {
+       window.location = 'LoginUser.xhtml';
+     }, 500);
+   	} 
+   //]]> 
+</script>
+</h:head> 
+<body> 
+<h:form>
+	  <p:menu>
+        <p:submenu label="Mantenedor">
+            <p:menuitem value="Usuario" disabled="#{controlLogin.usuario}" action="FaceMantenedorUsuario" icon="icon-users" onclick="#{controlUsuarios.CargarMantenedorUsuario()}"/>
+            <p:menuitem value="Empresa" disabled="#{controlLogin.empresa}" action="FaceMantenedorEmpresa"  icon="icon-building-filled" onclick="#{controlEmpresa.CargarMantenedorEmpresas()}"/>
+             <p:menuitem value="Combustible" disabled="#{controlLogin.combustible}" action="FaceMantenedorCombustible"  icon="ui-icon-arrowrefresh-1-w" onclick="#{controlCombustible.CargarMantenedorCombustible()}"/>
+        </p:submenu>
+        <p:submenu label="Gestión">
+            <p:menuitem value="Vales" disabled="#{controlLogin.vales}" action="FaceMantenedorTalonarios" icon="ui-icon-close" onclick="#{controlVale.CargarMantenedorTalonarios()}"/>
+            <p:menuitem value="Informe Ventas" disabled="#{controlLogin.informe}" onclick="PF('dlg').show();" icon="ui-icon-home"/>
+            <p:menuitem value="Cargar Beneficios externos" disabled="#{controlLogin.beneficios}" action="FaceMantenedorBeneficiario" onclick="#{controlBeneficiarios.ListarBeneficiarios()}"  icon="ui-icon-star"/>
+        </p:submenu>
+        <p:submenu label="Navegacion">
+            <p:menuitem value="Salir" actionListener="#{controlLogin.logout()}" icon="ui-icon-home" oncomplete="logout(xhr, status, args)"/>
+        </p:submenu>
+    </p:menu>
+ </h:form>
+ 
+ <h:form>           
+ 
+    <p:dialog header="Generar Reporte ventas" widgetVar="dlg" focus="button" resizable="false">
+        <h:panelGrid columns="2" cellpadding="5">
+             <p:outputLabel for="button" value="Fecha Inicio:" />
+        	<p:calendar id="button" value="#{controlInforme.fechaIncio}" showOn="button" />
+ 			<p:outputLabel for="button1" value="Fecha Fin:" />
+        	<p:calendar id="button1" value="#{controlInforme.fechaFin}" showOn="button" />
+        	<p:commandButton value="Generar" action="FaceInformeVenta" actionListener="#{controlInforme.IniciarInforme()}"/>
+        </h:panelGrid>
+    </p:dialog>
+ 
+</h:form>
+ 
+ 
+ 
+</body> 
+</html>

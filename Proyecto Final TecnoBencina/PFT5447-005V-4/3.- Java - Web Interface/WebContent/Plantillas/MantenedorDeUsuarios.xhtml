@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+</h:head>
+<h:body>
+<p:panel id="mantUser" header="Mantenedor Usuario" >
+ 		<p:growl id="msgs" showDetail="true" />
+		<h:form id="ing">
+			<p:panel header="Formulario Ingreso">
+				
+				<h:panelGrid columns="2">
+				<p:outputLabel for="rut" value="Rut"/>
+					<h:panelGrid columns="3">
+					<p:inputText id="rut" value="#{controlUsuarios.rut}" >
+					</p:inputText>
+					<p:outputLabel for="dv" value="-"/>
+					<p:inputText id="dv" value="#{controlUsuarios.dv}" size="1" >
+					</p:inputText>
+					</h:panelGrid>
+					
+					
+					<p:outputLabel for="nom" value="Nombre"/>
+					<p:inputText id="nom" value="#{controlUsuarios.nombre}" />
+					<p:outputLabel for="aPaterno" value="Apellido Paterno"/>
+					<p:inputText id="aPaterno" value="#{controlUsuarios.aPaterno}" />
+					<p:outputLabel for="aMaterno" value="Apellido Materno"/>
+					<p:inputText id="aMaterno" value="#{controlUsuarios.aMaterno}" />
+					<p:outputLabel for="rol" value="Rol"/>
+					<p:selectOneMenu id="rol"  value="#{controlUsuarios.rol}" >
+						<f:selectItem itemLabel="Seleccione Uno" itemValue="-1"/>
+						<f:selectItems value="#{controlUsuarios.roles}"/>
+					</p:selectOneMenu>
+					<p:outputLabel for="psw1" value="Password"/>
+					<p:password id="psw1"  value="#{controlUsuarios.password}" />
+				
+					<p:commandButton value="Crear" actionListener="#{controlUsuarios.CrearUsuario()}" update=":msgs :lstUsr ing"/>	
+				</h:panelGrid>				
+			</p:panel>		
+		</h:form>
+		
+		<h:form id="lstUsr">
+			
+			<p:dataTable value="#{controlUsuarios.usuarios}" var="usr" scrollable="true" scrollWidth="100%" scrollHeight="150">
+						 
+						 <p:column headerText="Rut">
+						 <p:outputLabel value="#{usr.usuario.rut} - #{usr.usuario.dv}"/>
+						 </p:column>
+				
+						 <p:column headerText="Nombre">
+						 <p:outputLabel value="#{usr.usuario.nombres}" rendered="#{not usr.editable}"/>
+						 <p:inputText value="#{usr.usuario.nombres}" rendered="#{usr.editable}"/>
+						 </p:column>
+						 
+						<p:column headerText="Apellido Paterno">
+						 <p:outputLabel value="#{usr.usuario.apatrno}" rendered="#{not usr.editable}"/>
+						 <p:inputText value="#{usr.usuario.apatrno}" rendered="#{usr.editable}"/>						 
+						 </p:column>
+						
+						<p:column headerText="Apellido Materno" >
+						 <p:outputLabel value="#{usr.usuario.amaterno}" rendered="#{not usr.editable}"/>
+						 <p:inputText value="#{usr.usuario.amaterno}" rendered="#{usr.editable}"/>
+						 </p:column>
+						 
+						 <p:column headerText="Rol">
+						 <p:outputLabel value="#{usr.usuario.rol.nombre}" rendered="#{not usr.editable}"/>
+						 <p:selectOneMenu id="rol" value="#{usr.usuario.rol.id}" rendered="#{usr.editable}">
+							<f:selectItem itemLabel="Seleccione Uno" itemValue="-1"/>
+							<f:selectItems value="#{controlUsuarios.roles}"/>
+						 </p:selectOneMenu>
+						 </p:column>
+						 
+						 <p:column headerText="Estado">
+							<p:selectBooleanButton value="#{usr.usuario.estado}" onLabel="Activo" offLabel="Inactivo" onIcon="ui-icon-check" offIcon="ui-icon-close" disabled="#{not usr.editable}"  style="width:35px"></p:selectBooleanButton>
+						 </p:column>
+						 
+						 <p:column headerText="Acción">
+						 	<p:commandLink value="Editar" action="#{controlUsuarios.AccionEditar(usr)}" update="lstUsr" />
+						 </p:column>
+			</p:dataTable>
+			<p:commandButton value="Actualizar" action="#{controlUsuarios.ActualizarUsuario()}" update=":mantUser lstUsr"/>
+		</h:form>
+		
+</p:panel>
+</h:body>
+</html>

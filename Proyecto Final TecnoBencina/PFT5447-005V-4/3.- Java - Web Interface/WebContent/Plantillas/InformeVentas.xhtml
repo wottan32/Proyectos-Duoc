@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<p:growl id="msgs" showDetail="true" />
+<p:panel header="Informe de ventas por periodo">
+<p:outputLabel value="Fecha Inicio: #{controlInforme.InisioStr()} - Fecha Fin: #{controlInforme.finStr()}"/><br/>
+<h:outputLabel value="Fecha Emisión Documento: #{controlInforme.emision}" />
+<h:form id="infCmb">
+	<p:dataTable value="#{controlInforme.listaLitrosxCombustible}" var="lxc">
+		<p:column headerText="Combustible">
+			<p:outputLabel value="#{lxc.cmb.nombre}" /> 
+		</p:column>
+		<p:column headerText="Litros Vendidos">
+			<p:outputLabel value="#{lxc.litros}" /> 
+		</p:column>
+	</p:dataTable>
+</h:form>
+<br/>
+<p:chart type="bar" model="#{controlInforme.grafBarra}" style="width:100%;" />
+<p:commandButton value="Imprimir Informe" actionListener="#{controlInforme.ImprimirInforme()}" update="msgs"/>
+</p:panel>
+</body> 
+</html>

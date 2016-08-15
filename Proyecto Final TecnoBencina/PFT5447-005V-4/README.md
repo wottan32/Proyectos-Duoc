@@ -20,9 +20,9 @@ http://intranet.tecnobencina.cl/tecnobencina/Servicio.svc
 
 Herramientas
 
-Toad
+Toad Data Modeler
 ```
-    Su carpeta de Google Drive
+    http://www.toadworld.com/m/freeware/
 ```
 
 Git
@@ -73,7 +73,7 @@ Comandos git útiles
 
 Clona un repositorio para trabajarlo de forma local
 ```
-    git clone https://github.com/iformas/PFT5447-005V-4-TecnoBencina.git
+    git clone https://github.com/......git
 ```
 
 Muestra los directorios de configuración

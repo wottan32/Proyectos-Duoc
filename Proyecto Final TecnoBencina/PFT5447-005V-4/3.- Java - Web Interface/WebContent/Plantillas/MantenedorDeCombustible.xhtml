@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" > 
+
+<h:head></h:head> 
+<body> 
+<p:growl id="msgs" showDetail="true" />
+<h:form id="lstCmb">
+		<p:panel header="Combustibles">
+			<p:dataTable value="#{controlCombustible.combustible}" var="cmb">
+			<p:column headerText="Tipo Combustible">
+			<p:outputLabel value="#{cmb.cmb.nombre}" rendered="#{not cmb.editable}"/>
+			<p:inputText value="#{cmb.cmb.nombre}" rendered="#{cmb.editable}"/>
+			</p:column>
+			
+			<p:column headerText="Precio">
+			<p:outputLabel value="#{cmb.cmb.precioActual}" rendered="#{not cmb.editable}"/>
+			<p:spinner value="#{cmb.cmb.precioActual}" rendered="#{cmb.editable}"/>
+			</p:column>
+			
+			<p:column headerText="Edición">
+			<p:commandLink value="Editar" action="#{controlCombustible.AccionEditar(cmb)}" update="lstCmb"/>
+			</p:column>
+			</p:dataTable>
+			<p:commandButton value="Actualizar" actionListener="#{controlCombustible.ActualizarCombustible()}" update=":msgs lstCmb :dtCmb"/>	
+		</p:panel>
+	</h:form>
+	<h:form id="dtCmb">
+	<p:panel header="Combustibles">
+		<p:dataGrid var="comb" value="#{controlCombustible.listCombustible}" columns="3" layout="grid"
+        rows="12" paginator="true" id="comb"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        rowsPerPageTemplate="6,12,16">
+        
+	         <p:panel header="#{comb.nombre}" style="text-align:center">
+	         	<p:dataTable value="#{comb.historial}" var = "cmb" scrollable="true" scrollHeight="150">
+	         		<p:column headerText="Fecha">
+	         			<p:outputLabel value="#{cmb.feha}"/>
+	         		</p:column>
+	         		<p:column headerText="Precio">
+	         			<p:outputLabel value="#{cmb.historial.precio}"/>
+	         		</p:column>
+	         	</p:dataTable>
+	         </p:panel>
+        
+        </p:dataGrid>
+	</p:panel>	
+	</h:form>
+</body> 
+</html>

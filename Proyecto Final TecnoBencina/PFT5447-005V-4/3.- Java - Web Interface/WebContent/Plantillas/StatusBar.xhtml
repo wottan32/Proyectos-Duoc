@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" > 
+
+<h:head></h:head> 
+<body> 
+<div style="width: 100%;">
+	<p:accordionPanel>
+		<p:tab title="Información Usuario">
+			<h:graphicImage value="/img/user1.png" style="float:left;" height="80px" width="80px">
+			</h:graphicImage>
+			<div style="padding-left: 50px; float: left; padding-top:8px;">	
+			<p:outputLabel id="nombre" value="Nombre: #{controlLogin.user.nombres} #{controlLogin.user.apatrno} #{controlLogin.user.amaterno}"/><br/>
+			<p:outputLabel id="rut" value="Rut: #{controlLogin.user.rut} - #{controlLogin.user.dv}"/><br/>
+			<p:outputLabel id="rol" value="Rol: #{controlLogin.user.rol.nombre}"/>
+		</div>
+		</p:tab>		
+	</p:accordionPanel>
+</div>
+</body> 
+</html>

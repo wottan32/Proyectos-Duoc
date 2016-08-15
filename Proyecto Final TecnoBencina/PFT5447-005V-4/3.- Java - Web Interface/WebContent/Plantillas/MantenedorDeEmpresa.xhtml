@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
+
+<h:head>
+
+</h:head>
+<h:body >
+<p:growl id="msgs" showDetail="true" />
+<h:form id="frmEmp">
+	<p:panel header="Formulario Ingreso">
+		<p:outputLabel value="Rut Empresa"/>
+		<p:inputText id="rutemp" value="#{controlEmpresa.rut}"/><p:outputLabel value="-"/><p:inputText size="1" id="dv" value="#{controlEmpresa.dv}"  style="height: 20px;"/>
+		<h:panelGrid columns="2">
+			<p:outputLabel value="Nombre"/>
+			<p:inputText id="nom" value="#{controlEmpresa.nombre}"/>
+			
+			<p:outputLabel for="RutUser" value="Rut Usuario"/>
+			<p:selectOneMenu id="RutUser" value="#{controlEmpresa.rutUsuario}">
+				<f:selectItems value="#{controlEmpresa.usuarios}"/>
+			</p:selectOneMenu>
+		</h:panelGrid>
+		<p:commandButton value="Crear" actionListener="#{controlEmpresa.IngresarEmpresa()}" update=":lstEmp :msgs frmEmp"/>
+	</p:panel>			
+</h:form>
+<br/>
+<h:form id="lstEmp">
+	<p:dataTable value="#{controlEmpresa.empresas}" var="emp" scrollable="true" scrollHeight="150">
+		
+		<p:column headerText="Rut Empresa">
+		<p:outputLabel value="#{emp.emp.rut} - #{emp.emp.dv}"/>
+		</p:column>
+		
+		<p:column headerText="Nombre Empresa">
+		 <p:outputLabel value="#{emp.emp.nombre}" rendered="#{not emp.editable}"/>
+		 <p:inputText value="#{emp.emp.nombre}" rendered="#{emp.editable}"/>
+		 </p:column>
+		 
+		 <p:column headerText="Nombre Encargado">
+		 <p:outputLabel value="#{emp.emp.usuario.nombres}" rendered="#{not emp.editable}"/>
+	  	 <p:selectOneMenu id="rol" value="#{emp.emp.usuario.rut}" rendered="#{emp.editable}">
+			<f:selectItems value="#{controlEmpresa.usuarios}"/>
+		 </p:selectOneMenu>
+		 </p:column>
+		 
+		<p:column headerText="Estado">
+		<p:selectBooleanButton value="#{emp.emp.estado}" onLabel="Activo" offLabel="Inactivo" disabled="#{not emp.editable}"></p:selectBooleanButton>
+		 </p:column>
+
+		<p:column headerText="accion">
+		 	<p:commandLink value="Editar" action="#{controlEmpresa.AccionEditar(emp)}" update="lstEmp" />
+		 </p:column>
+
+	</p:dataTable>
+	<p:commandButton value="Actualizar" action="#{controlEmpresa.ActualizarEmpresa()}" update="lstEmp :msgs"/>	
+
+</h:form>
+</h:body>
+</html>

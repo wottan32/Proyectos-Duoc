@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:p="http://primefaces.org/ui" > 
+
+<h:head>
+<script type="text/javascript">
+  //<![CDATA[
+  function manejarLogin(xhr, status, args) {
+    if (!args.validationFailed && args.estaLogeado) {
+      setTimeout(function() {
+        window.location = args.view;
+      }, 500);
+    }
+  }
+//]]>
+</script>
+</h:head> 
+<h:body> 
+<p:growl id="msgs" showDetail="true" />
+<center style="padding-top: 10%;">
+	<p:panel header="Ingreso Usuario" style="width: 400px;">
+	<div style="text-align: left;">
+	<h:form>
+		<h:panelGrid columns="2">			
+			<p:outputLabel value="Rut"/>
+			<p:inputText value="#{controlLogin.rut}"/>
+			<p:outputLabel value="Contraseña"/>
+			<p:password value="#{controlLogin.pass}"/>
+			<p:commandButton value="Ingresar" 
+							 actionListener="#{controlLogin.ValidarIngreso()}"
+							 update=":msgs"
+							 oncomplete="manejarLogin(xhr, status, args)"/>			
+		</h:panelGrid>
+	</h:form>
+	</div>
+	</p:panel>
+</center>
+</h:body> 
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<p:panel id="Vale" header="Solicitud de Vales" >
+ 		<p:growl id="msgs" showDetail="true" />
+<h:form id="ing">
+<h:panelGrid columns="2">
+		
+		<p:outputLabel value="Rut Empresa: "/>
+		<h:panelGrid columns="2">
+		<p:selectOneMenu value="#{controlVale.rut}" >
+			<f:selectItem itemLabel="Seleccione Uno" itemValue="-1"/>
+			<f:selectItems value="#{controlVale.listaEmpresa}"/>
+		</p:selectOneMenu>
+		<p:commandButton value="Buscar" action="#{controlVale.BuscarEmpresa()}" update="ing :lstTln :msgs :dlgVls"/>
+		</h:panelGrid>
+		<p:outputLabel value="Empresa: "/>		
+		<p:inputText value="#{controlVale.nombreEmpresa}"/>
+		
+		<p:outputLabel value="Encargado: "/>		
+		<p:inputText value="#{controlVale.nombreEncargado}"/>		
+		<p:outputLabel value="Comprobante de transaccion: "/>		
+		<p:inputText value="#{controlVale.comprobanteTransaccion}"/>
+</h:panelGrid>
+		<br/>		
+		<p:commandButton value="Listar Todos" actionListener="#{controlVale.CargarMantenedorTalonarios()}" update=":lstTln ing :msgs :dlgVls"/>
+		<p:commandButton value="Agregar Talonario" actionListener="#{controlVale.GenerarTalonario()}" update=":lstTln ing :msgs :dlgVls"/>
+		<p:commandButton value="Agregar Vales" onclick="PF('vls').show();" update=":lstTln ing :msgs"/>			
+</h:form>
+<br/>
+<h:form id="lstTln">
+<h:panelGrid columns="3" >
+<p:dataTable value="#{controlVale.talonarios}" var="tal" scrollable="true" scrollHeight="200" >
+	<p:column headerText="Nº" width="20">
+		<p:outputLabel value="#{tal.talonarioE.id}"/>
+	</p:column>
+	<p:column headerText="Rut Empresa">
+		<p:outputLabel value="#{tal.talonarioE.empresa.rut}"/>
+	</p:column>
+	<p:column headerText="Fecha Entrega">
+		<p:outputLabel value="#{tal.fechaEntrega}"/>
+	</p:column>
+	<p:column headerText="Estado">
+		<p:selectBooleanButton value="#{tal.talonarioE.estado}" onLabel="Activo" offLabel="Inactivo" ></p:selectBooleanButton>
+	</p:column>
+	<p:column headerText="Listar Vales">
+		<p:commandLink value="Listar" action="#{controlVale.ListarValesXTalonario(tal)}" update="lstTln :msgs"/>
+	</p:column>
+</p:dataTable>
+<div >
+<p:dataTable id="vale" value="#{controlVale.valesXTalonario}" var="val" tableStyle="width: 300px; padding-top: 0px;" scrollable="true" scrollHeight="200">
+	<p:column headerText="Nª Vale" >
+		<p:outputLabel value="#{val.id}"/>
+	</p:column>
+	<p:column headerText="Cantidad de Litros">
+		<p:outputLabel value="#{val.cantidadLitros}"/>
+	</p:column>
+	<p:column headerText="Estado">
+		<p:outputLabel value="#{val.estado}"/>
+	</p:column>
+</p:dataTable>
+</div>
+</h:panelGrid>
+</h:form>
+</p:panel>
+
+ <h:form id="dlgVls">    
+  	<p:dialog header="Agregar Vales a Talonario" widgetVar="vls" resizable="false">
+        <h:panelGrid columns="2" cellpadding="5">
+        	<p:outputLabel for="NumTal" value="Talonario : "/>		
+        	<p:selectOneMenu id="NumTal" value="#{controlVale.numTalonario}">
+        		<f:selectItems value="#{controlVale.selectTalonario}" />
+		 	</p:selectOneMenu>		 	
+			<p:outputLabel for="cantLts" value="Cantidad de litros" />
+			<p:selectOneMenu id="cantLts" value="#{controlVale.cantidadLitros}">
+				<f:selectItem itemValue="diez" itemLabel="Diez Litros"/>
+				<f:selectItem itemValue="veinte" itemLabel="Veinte Litros"/>
+				<f:selectItem itemValue="treinta" itemLabel="Treinta Litros"/>
+			</p:selectOneMenu>			
+			<p:outputLabel for="vlsXtal" value="Cantidad de vales por talonario: "/>		
+			<p:inputText id="vlsXtal" value="#{controlVale.cantDeVales}"/>
+            
+        	<p:commandButton value="Generar vales" actionListener="#{controlVale.CargarValesATalonario()}"/>
+        </h:panelGrid>
+    </p:dialog> 
+</h:form>
+ 
+</body> 
+</html>
