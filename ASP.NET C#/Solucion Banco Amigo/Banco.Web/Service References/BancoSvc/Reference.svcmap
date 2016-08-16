@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9e87adf1-2b0f-4cfb-9599-5318914265ce" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50045/BancoServ.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BancoServ.xsd" MetadataType="Schema" ID="a91e4275-51c4-4564-84c8-7a2e1c783c91" SourceId="1" SourceUrl="http://localhost:50045/BancoServ.svc?xsd=xsd0" />
+    <MetadataFile FileName="BancoServ1.xsd" MetadataType="Schema" ID="6072ab82-2b06-4086-abb2-8833be4d3bc4" SourceId="1" SourceUrl="http://localhost:50045/BancoServ.svc?xsd=xsd2" />
+    <MetadataFile FileName="BancoServ.wsdl" MetadataType="Wsdl" ID="ffb8c974-4330-4d95-8610-2fae800455ff" SourceId="1" SourceUrl="http://localhost:50045/BancoServ.svc?wsdl" />
+    <MetadataFile FileName="BancoServ.disco" MetadataType="Disco" ID="af886435-98aa-4607-b2a0-b8ce66bb731c" SourceId="1" SourceUrl="http://localhost:50045/BancoServ.svc?disco" />
+    <MetadataFile FileName="BancoServ2.xsd" MetadataType="Schema" ID="6b989f3c-4b83-44b5-9e45-8a2161816b5c" SourceId="1" SourceUrl="http://localhost:50045/BancoServ.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

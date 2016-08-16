@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="index.aspx" title="Inicio"  description="">
+      <siteMapNode title="Producto">
+        <siteMapNode url="producto/MantenedorProducto.aspx" title="Mantenedor de Productos"  description="" />
+      </siteMapNode>
+      <siteMapNode title="Usuario">
+        <siteMapNode url="usuario/MantenedorUsuario.aspx" title="Mantenedor de Usuarios"  description="" />
+      </siteMapNode>
+      <siteMapNode title="Carrito">
+        <siteMapNode url="carrito/MantenedorCarrito.aspx" title="Mantenedor de Carritos"  description="" />
+      </siteMapNode>
+      <siteMapNode title="Venta">
+        <siteMapNode url="venta/mantenedorVenta.aspx" title="Mantenedor de Venta"  description="" />
+      </siteMapNode>
+
+    </siteMapNode>
+</siteMap>

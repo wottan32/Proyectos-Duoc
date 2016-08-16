@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BancoServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50045/BancoServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50045/BancoServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50045/BancoServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Banco.Negocio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBancoServ_VerificarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_VerificarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_buscarTransferenciasPorCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTransferenciasPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_buscarTransferenciasPorCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarTransferenciasPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_buscarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_buscarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_AgergarTransferencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgergarTransferencia" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_AgergarTransferencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgergarTransferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_UpdateNombreUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNombreUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_UpdateNombreUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNombreUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_EliminarTransferencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTransferencia" />
+  </wsdl:message>
+  <wsdl:message name="IBancoServ_EliminarTransferencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTransferenciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBancoServ">
+    <wsdl:operation name="VerificarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/VerificarCliente" message="tns:IBancoServ_VerificarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/VerificarClienteResponse" message="tns:IBancoServ_VerificarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTransferenciasPorCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/buscarTransferenciasPorCliente" message="tns:IBancoServ_buscarTransferenciasPorCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/buscarTransferenciasPorClienteResponse" message="tns:IBancoServ_buscarTransferenciasPorCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/buscarCliente" message="tns:IBancoServ_buscarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/buscarClienteResponse" message="tns:IBancoServ_buscarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgergarTransferencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/AgergarTransferencia" message="tns:IBancoServ_AgergarTransferencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/AgergarTransferenciaResponse" message="tns:IBancoServ_AgergarTransferencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNombreUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/UpdateNombreUsuario" message="tns:IBancoServ_UpdateNombreUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/UpdateNombreUsuarioResponse" message="tns:IBancoServ_UpdateNombreUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTransferencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancoServ/EliminarTransferencia" message="tns:IBancoServ_EliminarTransferencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancoServ/EliminarTransferenciaResponse" message="tns:IBancoServ_EliminarTransferencia_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBancoServ" type="tns:IBancoServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarCliente">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/VerificarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTransferenciasPorCliente">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/buscarTransferenciasPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCliente">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/buscarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgergarTransferencia">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/AgergarTransferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNombreUsuario">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/UpdateNombreUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTransferencia">
+      <soap:operation soapAction="http://tempuri.org/IBancoServ/EliminarTransferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BancoServ">
+    <wsdl:port name="BasicHttpBinding_IBancoServ" binding="tns:BasicHttpBinding_IBancoServ">
+      <soap:address location="http://localhost:50045/BancoServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

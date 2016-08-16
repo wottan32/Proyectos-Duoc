@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BancoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BancoModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="BancoModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transferencia" EntityType="BancoModel.Store.Transferencia" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Cliente_Transferencia_FK1" Association="BancoModel.Store.Cliente_Transferencia_FK1">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Transferencia" EntitySet="Transferencia" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="RutCliente" />
+          </Key>
+          <Property Name="RutCliente" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="NombreCompleto" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Transferencia">
+          <Key>
+            <PropertyRef Name="IdTransferencia" />
+          </Key>
+          <Property Name="IdTransferencia" Type="int" Nullable="false" />
+          <Property Name="Cliente" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="RutDestinatario" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="NroCuentaDestinatario" Type="int" Nullable="false" />
+          <Property Name="Monto" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Cliente_Transferencia_FK1">
+          <End Role="Cliente" Type="BancoModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Transferencia" Type="BancoModel.Store.Transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="RutCliente" />
+            </Principal>
+            <Dependent Role="Transferencia">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="BancoModel.Cliente" />
+          <EntitySet Name="Transferencia" EntityType="BancoModel.Transferencia" />
+          <AssociationSet Name="Cliente_Transferencia_FK1" Association="BancoModel.Cliente_Transferencia_FK1">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Transferencia" EntitySet="Transferencia" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="RutCliente" />
+          </Key>
+          <Property Name="RutCliente" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="NombreCompleto" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Transferencia" Relationship="BancoModel.Cliente_Transferencia_FK1" FromRole="Cliente" ToRole="Transferencia" />
+        </EntityType>
+        <EntityType Name="Transferencia">
+          <Key>
+            <PropertyRef Name="IdTransferencia" />
+          </Key>
+          <Property Name="IdTransferencia" Type="Int32" Nullable="false" />
+          <Property Name="Cliente" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="RutDestinatario" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="NroCuentaDestinatario" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente1" Relationship="BancoModel.Cliente_Transferencia_FK1" FromRole="Transferencia" ToRole="Cliente" />
+        </EntityType>
+        <Association Name="Cliente_Transferencia_FK1">
+          <End Role="Cliente" Type="BancoModel.Cliente" Multiplicity="1" />
+          <End Role="Transferencia" Type="BancoModel.Transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="RutCliente" />
+            </Principal>
+            <Dependent Role="Transferencia">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BancoModelStoreContainer" CdmEntityContainer="BancoEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="BancoModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="RutCliente" ColumnName="RutCliente" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transferencia">
+            <EntityTypeMapping TypeName="BancoModel.Transferencia">
+              <MappingFragment StoreEntitySet="Transferencia">
+                <ScalarProperty Name="IdTransferencia" ColumnName="IdTransferencia" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="RutDestinatario" ColumnName="RutDestinatario" />
+                <ScalarProperty Name="NroCuentaDestinatario" ColumnName="NroCuentaDestinatario" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="BancoEDM">
+        <EntityTypeShape EntityType="BancoModel.Cliente" Width="1.5" PointX="0.75" PointY="1.125" Height="1.7879850260416672" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoModel.Transferencia" Width="1.5" PointX="3" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="BancoModel.Cliente_Transferencia_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.0189925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.0189925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

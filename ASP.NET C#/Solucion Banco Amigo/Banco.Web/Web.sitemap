@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Login.aspx" title="Login"  description="Página de login">
+    <siteMapNode url="Default.aspx" title="Inicio"  description="" />
+    <siteMapNode url="ModificarNombre.aspx" title="Modificar Nombre"  description="" />
+    <siteMapNode url="RealizarTransferencia.aspx" title="Realizar Transferencia"  description="" />
+    <siteMapNode url="EliminarTransferencia.aspx" title="Eliminar Transferencia"  description="" />
+  </siteMapNode>
+</siteMap>

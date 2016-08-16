@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FactoryPCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FactoryPCModelStoreContainer">
+          <EntitySet Name="Carrito" EntityType="FactoryPCModel.Store.Carrito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Producto" EntityType="FactoryPCModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductosXCarrito" EntityType="FactoryPCModel.Store.ProductosXCarrito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="FactoryPCModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Venta" EntityType="FactoryPCModel.Store.Venta" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ProductosXCarrito_codCarrito" Association="FactoryPCModel.Store.FK_ProductosXCarrito_codCarrito">
+            <End Role="Carrito" EntitySet="Carrito" />
+            <End Role="ProductosXCarrito" EntitySet="ProductosXCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductosXCarrito_codProducto" Association="FactoryPCModel.Store.FK_ProductosXCarrito_codProducto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="ProductosXCarrito" EntitySet="ProductosXCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venta_codCarrito" Association="FactoryPCModel.Store.FK_Venta_codCarrito">
+            <End Role="Carrito" EntitySet="Carrito" />
+            <End Role="Venta" EntitySet="Venta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venta_rutUsuario" Association="FactoryPCModel.Store.FK_Venta_rutUsuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Venta" EntitySet="Venta" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Carrito">
+          <Key>
+            <PropertyRef Name="codCarrito" />
+          </Key>
+          <Property Name="codCarrito" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="codProducto" />
+          </Key>
+          <Property Name="codProducto" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="precio" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductosXCarrito">
+          <Key>
+            <PropertyRef Name="codLista" />
+          </Key>
+          <Property Name="codProducto" Type="int" Nullable="false" />
+          <Property Name="codCarrito" Type="int" Nullable="false" />
+          <Property Name="codLista" Type="int" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="apellidos" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="codVenta" />
+          </Key>
+          <Property Name="codVenta" Type="int" Nullable="false" />
+          <Property Name="total" Type="bigint" Nullable="false" />
+          <Property Name="fechaVenta" Type="datetime" Nullable="false" />
+          <Property Name="codCarrito" Type="int" Nullable="false" />
+          <Property Name="rutUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ProductosXCarrito_codCarrito">
+          <End Role="Carrito" Type="FactoryPCModel.Store.Carrito" Multiplicity="1" />
+          <End Role="ProductosXCarrito" Type="FactoryPCModel.Store.ProductosXCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrito">
+              <PropertyRef Name="codCarrito" />
+            </Principal>
+            <Dependent Role="ProductosXCarrito">
+              <PropertyRef Name="codCarrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductosXCarrito_codProducto">
+          <End Role="Producto" Type="FactoryPCModel.Store.Producto" Multiplicity="1" />
+          <End Role="ProductosXCarrito" Type="FactoryPCModel.Store.ProductosXCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="codProducto" />
+            </Principal>
+            <Dependent Role="ProductosXCarrito">
+              <PropertyRef Name="codProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venta_codCarrito">
+          <End Role="Carrito" Type="FactoryPCModel.Store.Carrito" Multiplicity="1" />
+          <End Role="Venta" Type="FactoryPCModel.Store.Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrito">
+              <PropertyRef Name="codCarrito" />
+            </Principal>
+            <Dependent Role="Venta">
+              <PropertyRef Name="codCarrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venta_rutUsuario">
+          <End Role="Usuario" Type="FactoryPCModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Venta" Type="FactoryPCModel.Store.Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="Venta">
+              <PropertyRef Name="rutUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FactoryPCModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FactoryPCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carrito" EntityType="FactoryPCModel.Carrito" />
+          <EntitySet Name="Producto" EntityType="FactoryPCModel.Producto" />
+          <EntitySet Name="ProductosXCarrito" EntityType="FactoryPCModel.ProductosXCarrito" />
+          <EntitySet Name="Usuario" EntityType="FactoryPCModel.Usuario" />
+          <EntitySet Name="Venta" EntityType="FactoryPCModel.Venta" />
+          <AssociationSet Name="FK_ProductosXCarrito_codCarrito" Association="FactoryPCModel.FK_ProductosXCarrito_codCarrito">
+            <End Role="Carrito" EntitySet="Carrito" />
+            <End Role="ProductosXCarrito" EntitySet="ProductosXCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venta_codCarrito" Association="FactoryPCModel.FK_Venta_codCarrito">
+            <End Role="Carrito" EntitySet="Carrito" />
+            <End Role="Venta" EntitySet="Venta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductosXCarrito_codProducto" Association="FactoryPCModel.FK_ProductosXCarrito_codProducto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="ProductosXCarrito" EntitySet="ProductosXCarrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venta_rutUsuario" Association="FactoryPCModel.FK_Venta_rutUsuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Venta" EntitySet="Venta" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Carrito">
+          <Key>
+            <PropertyRef Name="codCarrito" />
+          </Key>
+          <Property Name="codCarrito" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductosXCarrito" Relationship="FactoryPCModel.FK_ProductosXCarrito_codCarrito" FromRole="Carrito" ToRole="ProductosXCarrito" />
+          <NavigationProperty Name="Venta" Relationship="FactoryPCModel.FK_Venta_codCarrito" FromRole="Carrito" ToRole="Venta" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="codProducto" />
+          </Key>
+          <Property Name="codProducto" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="precio" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ProductosXCarrito" Relationship="FactoryPCModel.FK_ProductosXCarrito_codProducto" FromRole="Producto" ToRole="ProductosXCarrito" />
+        </EntityType>
+        <EntityType Name="ProductosXCarrito">
+          <Key>
+            <PropertyRef Name="codLista" />
+          </Key>
+          <Property Name="codProducto" Type="Int32" Nullable="false" />
+          <Property Name="codCarrito" Type="Int32" Nullable="false" />
+          <Property Name="codLista" Type="Int32" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carrito" Relationship="FactoryPCModel.FK_ProductosXCarrito_codCarrito" FromRole="ProductosXCarrito" ToRole="Carrito" />
+          <NavigationProperty Name="Producto" Relationship="FactoryPCModel.FK_ProductosXCarrito_codProducto" FromRole="ProductosXCarrito" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="rut" />
+          </Key>
+          <Property Name="rut" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Venta" Relationship="FactoryPCModel.FK_Venta_rutUsuario" FromRole="Usuario" ToRole="Venta" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="codVenta" />
+          </Key>
+          <Property Name="codVenta" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Int64" Nullable="false" />
+          <Property Name="fechaVenta" Type="DateTime" Nullable="false" />
+          <Property Name="codCarrito" Type="Int32" Nullable="false" />
+          <Property Name="rutUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Carrito" Relationship="FactoryPCModel.FK_Venta_codCarrito" FromRole="Venta" ToRole="Carrito" />
+          <NavigationProperty Name="Usuario" Relationship="FactoryPCModel.FK_Venta_rutUsuario" FromRole="Venta" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_ProductosXCarrito_codCarrito">
+          <End Role="Carrito" Type="FactoryPCModel.Carrito" Multiplicity="1" />
+          <End Role="ProductosXCarrito" Type="FactoryPCModel.ProductosXCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrito">
+              <PropertyRef Name="codCarrito" />
+            </Principal>
+            <Dependent Role="ProductosXCarrito">
+              <PropertyRef Name="codCarrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venta_codCarrito">
+          <End Role="Carrito" Type="FactoryPCModel.Carrito" Multiplicity="1" />
+          <End Role="Venta" Type="FactoryPCModel.Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrito">
+              <PropertyRef Name="codCarrito" />
+            </Principal>
+            <Dependent Role="Venta">
+              <PropertyRef Name="codCarrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductosXCarrito_codProducto">
+          <End Role="Producto" Type="FactoryPCModel.Producto" Multiplicity="1" />
+          <End Role="ProductosXCarrito" Type="FactoryPCModel.ProductosXCarrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="codProducto" />
+            </Principal>
+            <Dependent Role="ProductosXCarrito">
+              <PropertyRef Name="codProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Venta_rutUsuario">
+          <End Role="Usuario" Type="FactoryPCModel.Usuario" Multiplicity="1" />
+          <End Role="Venta" Type="FactoryPCModel.Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="rut" />
+            </Principal>
+            <Dependent Role="Venta">
+              <PropertyRef Name="rutUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FactoryPCModelStoreContainer" CdmEntityContainer="FactoryPCEntities">
+          <EntitySetMapping Name="Carrito">
+            <EntityTypeMapping TypeName="FactoryPCModel.Carrito">
+              <MappingFragment StoreEntitySet="Carrito">
+                <ScalarProperty Name="codCarrito" ColumnName="codCarrito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="FactoryPCModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="codProducto" ColumnName="codProducto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductosXCarrito">
+            <EntityTypeMapping TypeName="FactoryPCModel.ProductosXCarrito">
+              <MappingFragment StoreEntitySet="ProductosXCarrito">
+                <ScalarProperty Name="codProducto" ColumnName="codProducto" />
+                <ScalarProperty Name="codCarrito" ColumnName="codCarrito" />
+                <ScalarProperty Name="codLista" ColumnName="codLista" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="FactoryPCModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Venta">
+            <EntityTypeMapping TypeName="FactoryPCModel.Venta">
+              <MappingFragment StoreEntitySet="Venta">
+                <ScalarProperty Name="codVenta" ColumnName="codVenta" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="fechaVenta" ColumnName="fechaVenta" />
+                <ScalarProperty Name="codCarrito" ColumnName="codCarrito" />
+                <ScalarProperty Name="rutUsuario" ColumnName="rutUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FactoryPCEDM">
+        <EntityTypeShape EntityType="FactoryPCModel.Carrito" Width="1.5" PointX="4" PointY="4.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FactoryPCModel.Producto" Width="1.5" PointX="8.75" PointY="0.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="FactoryPCModel.ProductosXCarrito" Width="1.5" PointX="8.625" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FactoryPCModel.Usuario" Width="1.5" PointX="1" PointY="0.5" Height="2.1725878906250005" IsExpanded="true" />
+        <EntityTypeShape EntityType="FactoryPCModel.Venta" Width="1.5" PointX="0.875" PointY="3.875" Height="2.3648893229166656" IsExpanded="true" />
+        <AssociationConnector Association="FactoryPCModel.FK_ProductosXCarrito_codCarrito" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.5" PointY="5.1487939453125" />
+          <ConnectorPoint PointX="8.625" PointY="5.1487939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="FactoryPCModel.FK_Venta_codCarrito" ManuallyRouted="false">
+          <ConnectorPoint PointX="4" PointY="5.172841796875" />
+          <ConnectorPoint PointX="2.375" PointY="5.172841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FactoryPCModel.FK_ProductosXCarrito_codProducto" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.4375" PointY="2.2879850260416674" />
+          <ConnectorPoint PointX="9.4375" PointY="3.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="FactoryPCModel.FK_Venta_rutUsuario" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.6875" PointY="2.6725878906250005" />
+          <ConnectorPoint PointX="1.6875" PointY="3.875" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
