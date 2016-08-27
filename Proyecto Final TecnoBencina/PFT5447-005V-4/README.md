@@ -1,5 +1,6 @@
 # PFT5447-005V-4-TecnoBencina
 Trabajo Potafolio
+[>>Enunciado<<](https://github.com/iformas/Proyectos-Duoc/blob/master/Proyecto%20Final%20TecnoBencina/PFT5447-005V-4/Enunciado%20Caso%204.pdf)
 
 Estructura de un archivo App.Config
 ```
@@ -62,6 +63,7 @@ Android Studio Bundle
 ```
     https://developer.android.com/studio/index.html
 ```
+A continuación Se encuentran unas notas para el grupo
 
 El funcionamiento local en git se divide en 3 areas
 
